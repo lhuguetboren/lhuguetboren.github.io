@@ -1,0 +1,907 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../practica_forms_07A/">
+      
+      
+      <link rel="icon" href="../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Introducción - M06-PRACTICA7A</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#validacion-en-formularios-js" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M06-PRACTICA7A" class="md-header__button md-logo" aria-label="M06-PRACTICA7A" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M06-PRACTICA7A
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducción
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M06-PRACTICA7A" class="md-nav__button md-logo" aria-label="M06-PRACTICA7A" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    M06-PRACTICA7A
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cliente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servidor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-de-validacion-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      API de Validación JS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-novalidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de novalidate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalizada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalizada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-y-consideraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo y Consideraciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evento-invalid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evento invalid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacion-con-email-restringido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación con Email Restringido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html5-js-con-estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML5 &amp; JS con Estilos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-de-checkbox-y-radio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de Checkbox y Radio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Múltiple
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-completo-de-validacion-personalizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo Completo de Validación Personalizada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Completo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practica_forms_07A/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cliente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servidor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-de-validacion-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      API de Validación JS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-novalidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de novalidate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalizada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalizada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-y-consideraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo y Consideraciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evento-invalid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evento invalid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacion-con-email-restringido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación con Email Restringido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html5-js-con-estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML5 &amp; JS con Estilos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-de-checkbox-y-radio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de Checkbox y Radio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Múltiple
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-completo-de-validacion-personalizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo Completo de Validación Personalizada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Completo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="validacion-en-formularios-js">Validación en Formularios JS<a class="headerlink" href="#validacion-en-formularios-js" title="Permanent link">#</a></h1>
+<pre class="mermaid"><code>mindmap
+  root (Validación en Formularios JS)
+    Validación
+        Cliente
+        Servidor
+    Métodos
+        API de Validación JS
+            HTML 5 + estilos
+            Expresiones Regulares
+        Personalizada
+    Eventos
+        Eventos de Formularios
+        Evitar Envío de Formulario
+    Elementos
+        "Basicos -text, select-"
+        "Manejo de Checkbox y Radio"
+        "Select Múltiple"
+
+</code></pre>
+<h2 id="validacion">Validación<a class="headerlink" href="#validacion" title="Permanent link">#</a></h2>
+<h3 id="cliente">Cliente<a class="headerlink" href="#cliente" title="Permanent link">#</a></h3>
+<ul>
+<li>La validación en el cliente no es segura.</li>
+<li>Se usa para mejorar la usabilidad.</li>
+<li>Se realiza en tres momentos:</li>
+<li>Al escribir.</li>
+<li>Al cambiar de input.</li>
+<li>Al enviar el formulario.</li>
+</ul>
+<h3 id="servidor">Servidor<a class="headerlink" href="#servidor" title="Permanent link">#</a></h3>
+<ul>
+<li>La validación en el servidor es obligatoria para garantizar seguridad.</li>
+<li>Se realiza después de recibir los datos del usuario.</li>
+</ul>
+<h2 id="metodos">Métodos<a class="headerlink" href="#metodos" title="Permanent link">#</a></h2>
+<h3 id="api-de-validacion-js">API de Validación JS<a class="headerlink" href="#api-de-validacion-js" title="Permanent link">#</a></h3>
+<ul>
+<li><code>checkValidity()</code>: verifica si un input o formulario es válido.</li>
+<li><code>reportValidity()</code>: verifica y muestra mensajes de error.</li>
+<li><code>validity</code>: contiene información sobre las reglas HTML incumplidas.</li>
+<li><code>setCustomValidity('mensaje')</code>: establece un mensaje de error personalizado.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">inputElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;miInput&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">inputElement</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;El campo no es válido&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Bondades:</strong> Rápido, fácil de usar con validaciones HTML5.</p>
+<p><strong>Problemas:</strong> No personaliza los mensajes de error.</p>
+<h3 id="uso-de-novalidate">Uso de <code>novalidate</code><a class="headerlink" href="#uso-de-novalidate" title="Permanent link">#</a></h3>
+<ul>
+<li>Se recomienda añadir el atributo <code>novalidate</code> en el <code>&lt;form&gt;</code> para personalizar validaciones con JS y evitar la validación automática del navegador.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;form_ex&quot;</span> <span class="na">novalidate</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email_ex&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="personalizada">Personalizada<a class="headerlink" href="#personalizada" title="Permanent link">#</a></h3>
+<ul>
+<li>Se usa <code>setCustomValidity()</code> para mostrar mensajes de error específicos.</li>
+<li><code>reportValidity()</code> muestra los errores en pantalla.</li>
+</ul>
+<h4 id="ejemplo-y-consideraciones">Ejemplo y Consideraciones<a class="headerlink" href="#ejemplo-y-consideraciones" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">inputElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;miInput&quot;</span><span class="p">);</span>
+<span class="nx">inputElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;Debe tener al menos 3 caracteres&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">reportValidity</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
+<p><strong>Bondades:</strong> Permite mensajes personalizados y flexibilidad en validaciones.</p>
+<p><strong>Problemas:</strong> Requiere mayor implementación manual.</p>
+<h3 id="evento-invalid">Evento <code>invalid</code><a class="headerlink" href="#evento-invalid" title="Permanent link">#</a></h3>
+<ul>
+<li>Se dispara cuando un campo no cumple una regla de validación.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">emailInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;email_ex&quot;</span><span class="p">);</span>
+<span class="nx">emailInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;invalid&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;El email ingresado no es válido&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="validacion-con-email-restringido">Validación con Email Restringido<a class="headerlink" href="#validacion-con-email-restringido" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="s2">&quot;form_ex&quot;</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="s2">&quot;form_ex&quot;</span><span class="p">][</span><span class="s2">&quot;mail&quot;</span><span class="p">].</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;ex@ex.com&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">evt</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Solo se permite el email ex@ex.com&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="html5-js-con-estilos">HTML5 &amp; JS con Estilos<a class="headerlink" href="#html5-js-con-estilos" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="nd">valid</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">121</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.356</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="nd">invalid</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.349</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;form_ex&quot;</span> <span class="na">novalidate</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nick&quot;</span> <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;[A-z]{2,4}&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="manejo-de-checkbox-y-radio">Manejo de Checkbox y Radio<a class="headerlink" href="#manejo-de-checkbox-y-radio" title="Permanent link">#</a></h3>
+<ul>
+<li>Se recorren los elementos con <code>document.forms['formulario']['campo']</code> y verificando <code>checked == true</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">radios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="s2">&quot;form_ex&quot;</span><span class="p">][</span><span class="s2">&quot;sex&quot;</span><span class="p">];</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">radios</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">radios</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">checked</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Seleccionado: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">radios</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="select-multiple">Select Múltiple<a class="headerlink" href="#select-multiple" title="Permanent link">#</a></h3>
+<ul>
+<li>Se obtiene la lista de opciones seleccionadas con <code>selectedIndex</code> y <code>options</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">selector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="s2">&quot;form_ex&quot;</span><span class="p">][</span><span class="s2">&quot;listado&quot;</span><span class="p">];</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">selector</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">selector</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">selected</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Seleccionado: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">selector</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="ejemplo-completo-de-validacion-personalizada">Ejemplo Completo de Validación Personalizada<a class="headerlink" href="#ejemplo-completo-de-validacion-personalizada" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">form_ex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="s2">&quot;form_ex&quot;</span><span class="p">];</span>
+<span class="nx">form_ex</span><span class="p">[</span><span class="s2">&quot;nick&quot;</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">validity</span><span class="p">.</span><span class="nx">patternMismatch</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;Debe contener entre 2 y 4 letras&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">reportValidity</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="html-completo">HTML Completo<a class="headerlink" href="#html-completo" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Formulario con Diferentes Tipos de Validación<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- Bootstrap CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#f8f9fa</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">.</span><span class="nc">error</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d-flex justify-content-center align-items-center vh-100&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center mb-4&quot;</span><span class="p">&gt;</span>Registro<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;registroForm&quot;</span><span class="p">&gt;</span>
+            <span class="cm">&lt;!-- Validación incorporada de HTML5 --&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-3&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-label&quot;</span><span class="p">&gt;</span>Email:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;emailError&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+            <span class="cm">&lt;!-- Validación incorporada de HTML5 con patrones --&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-3&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-label&quot;</span><span class="p">&gt;</span>Teléfono:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;tel&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;telefono&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;\d{9}&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;telefonoError&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+            <span class="cm">&lt;!-- Validación por JavaScript --&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-3&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-label&quot;</span><span class="p">&gt;</span>Contraseña:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;passwordError&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary w-100&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;registroForm&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Validación en JavaScript (Contraseña)</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">passwordError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;passwordError&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">passwordRegex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^(?=.*[A-Z])(?=.*\d).{8,}$/</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">passwordRegex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">password</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">passwordError</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">passwordError</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">valid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- Bootstrap JS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

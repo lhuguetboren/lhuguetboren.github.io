@@ -1,0 +1,1171 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../t_CrearProyecto/">
+      
+      
+      <link rel="icon" href="../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Introducción - M06-REACT</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-react-y-typescript" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M06-REACT" class="md-header__button md-logo" aria-label="M06-REACT" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M06-REACT
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducción
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M06-REACT" class="md-nav__button md-logo" aria-label="M06-REACT" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    M06-REACT
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es React?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es React?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-clave-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características Clave de React
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#react-con-typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      React con TypeScript
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="React con TypeScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-usar-typescript-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de usar TypeScript en React
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-componente-con-props-tipadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Componente con Props Tipadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-del-estado-en-react-usestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo del Estado en React: useState
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manejo del Estado en React: useState">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-usestate-con-typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de useState con TypeScript
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciclo-de-vida-con-useeffect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Vida con useEffect
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ciclo de Vida con useEffect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-useeffect-para-cargar-datos-desde-una-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: useEffect para cargar datos desde una API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegacion-con-react-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegación con React Router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navegación con React Router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-configuracion-basica-de-react-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Configuración Básica de React Router
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-de-depuracion-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas de Depuración en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Herramientas de Depuración en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-uso-de-consolelog-y-debugger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Uso de console.log y debugger
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eslint-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESLint en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESLint en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-eslint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de ESLint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t_CrearProyecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crear proyecto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_publicar_pagina_simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_useState_useEffects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useState_useEffects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_props/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    props
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_manejoEventos_tipados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eventos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_navegacion_Persistencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navegacion_Persistencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_react_router/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Router
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_ESLint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ESlint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_depuracion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Depuracion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sintaxis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conceptos clave
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es React?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es React?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-clave-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características Clave de React
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#react-con-typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      React con TypeScript
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="React con TypeScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas-de-usar-typescript-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas de usar TypeScript en React
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-componente-con-props-tipadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Componente con Props Tipadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-del-estado-en-react-usestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo del Estado en React: useState
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manejo del Estado en React: useState">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-usestate-con-typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de useState con TypeScript
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciclo-de-vida-con-useeffect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciclo de Vida con useEffect
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ciclo de Vida con useEffect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-useeffect-para-cargar-datos-desde-una-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: useEffect para cargar datos desde una API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegacion-con-react-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegación con React Router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navegación con React Router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-configuracion-basica-de-react-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Configuración Básica de React Router
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-de-depuracion-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas de Depuración en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Herramientas de Depuración en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-uso-de-consolelog-y-debugger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Uso de console.log y debugger
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eslint-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESLint en React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESLint en React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-eslint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de ESLint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduccion-a-react-y-typescript">Introducción a React y TypeScript<a class="headerlink" href="#introduccion-a-react-y-typescript" title="Permanent link">#</a></h1>
+<h2 id="que-es-react">¿Qué es React?<a class="headerlink" href="#que-es-react" title="Permanent link">#</a></h2>
+<p>React es una biblioteca de JavaScript utilizada para construir interfaces de usuario interactivas y eficientes. Fue creada por Facebook y es ampliamente usada en aplicaciones web modernas debido a su enfoque basado en componentes reutilizables.</p>
+<h3 id="caracteristicas-clave-de-react">Características Clave de React<a class="headerlink" href="#caracteristicas-clave-de-react" title="Permanent link">#</a></h3>
+<ul>
+<li>Basado en Componentes: La UI se divide en pequeñas piezas reutilizables llamadas componentes.</li>
+<li>Virtual DOM: React actualiza solo las partes necesarias del DOM, mejorando el rendimiento.</li>
+<li>Unidireccionalidad de Datos: Control de flujo de datos predecible y estructurado.</li>
+<li>Declarativo: Define la UI basada en el estado de la aplicación.</li>
+<li>Gran Comunidad y Ecosistema: React tiene una gran cantidad de librerías y herramientas que facilitan el desarrollo.</li>
+</ul>
+<pre class="mermaid"><code>graph LR;
+  A[React + TypeScript] --&gt; B[Componentes con Tipos]
+  A --&gt; C[JSX + Tipos]
+  A --&gt; D[useState con Tipos]
+  A --&gt; E[Props Tipadas]
+  A --&gt; F[Ciclo de Vida con Tipos]
+  A --&gt; G[Virtual DOM]
+  A --&gt; H[React Router para Navegación]
+  A --&gt; I[Integración con APIs]
+  A --&gt; J[Herramientas de Depuración]</code></pre>
+<hr />
+<h2 id="react-con-typescript">React con TypeScript<a class="headerlink" href="#react-con-typescript" title="Permanent link">#</a></h2>
+<p>TypeScript es un superset de JavaScript que añade tipado estático, lo que ayuda a prevenir errores y mejorar la mantenibilidad del código. Integrarlo con React permite definir tipos en componentes, props y estados.</p>
+<h3 id="ventajas-de-usar-typescript-en-react">Ventajas de usar TypeScript en React<a class="headerlink" href="#ventajas-de-usar-typescript-en-react" title="Permanent link">#</a></h3>
+<ul>
+<li>Mejor Autocompletado y Documentación en editores de código como VSCode.</li>
+<li>Prevención de Errores al definir tipos estrictos para props y estados.</li>
+<li>Código más Mantenible y fácil de refactorizar.</li>
+<li>Mayor seguridad en la manipulación de datos en los componentes.</li>
+</ul>
+<h3 id="ejemplo-componente-con-props-tipadas">Ejemplo: Componente con Props Tipadas<a class="headerlink" href="#ejemplo-componente-con-props-tipadas" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">SaludoProps</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Saludo</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="p">&lt;</span><span class="nt">SaludoProps</span><span class="p">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">nombre</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">nombre</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Saludo</span><span class="p">;</span>
+</code></pre></div>
+<p>Explicación:
+- Se define una interfaz <code>SaludoProps</code> para tipar las <code>props</code>.
+- El componente <code>Saludo</code> recibe <code>nombre</code> y lo renderiza en pantalla.</p>
+<hr />
+<h2 id="manejo-del-estado-en-react-usestate">Manejo del Estado en React: <code>useState</code><a class="headerlink" href="#manejo-del-estado-en-react-usestate" title="Permanent link">#</a></h2>
+<p>El hook <code>useState</code> permite manejar datos dinámicos dentro de un componente.</p>
+<h3 id="ejemplo-de-usestate-con-typescript">Ejemplo de <code>useState</code> con TypeScript<a class="headerlink" href="#ejemplo-de-usestate-con-typescript" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Contador</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contador</span><span class="p">,</span><span class="w"> </span><span class="nx">setContador</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">&lt;</span><span class="nt">number</span><span class="p">&gt;(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Contador</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">contador</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setContador</span><span class="p">(</span><span class="nx">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}&gt;</span><span class="nx">Incrementar</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Contador</span><span class="p">;</span>
+</code></pre></div>
+<p>Explicación:
+- <code>useState&lt;number&gt;(0)</code>: Se inicializa el estado con el tipo <code>number</code>.
+- <code>setContador(contador + 1)</code>: Se actualiza el estado y React vuelve a renderizar el componente.</p>
+<hr />
+<h2 id="ciclo-de-vida-con-useeffect">Ciclo de Vida con <code>useEffect</code><a class="headerlink" href="#ciclo-de-vida-con-useeffect" title="Permanent link">#</a></h2>
+<p>El hook <code>useEffect</code> permite ejecutar efectos secundarios en un componente.</p>
+<h3 id="ejemplo-useeffect-para-cargar-datos-desde-una-api">Ejemplo: <code>useEffect</code> para cargar datos desde una API<a class="headerlink" href="#ejemplo-useeffect-para-cargar-datos-desde-una-api" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">DatosAPI</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">datos</span><span class="p">,</span><span class="w"> </span><span class="nx">setDatos</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setDatos</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">title</span><span class="p">));</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="nx">Dato</span><span class="w"> </span><span class="nx">cargado</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">datos</span><span class="p">}&lt;/</span><span class="nt">h3</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">DatosAPI</span><span class="p">;</span>
+</code></pre></div>
+<p>Explicación:
+- <code>useEffect(() =&gt; { ... }, [])</code> ejecuta el código una sola vez al montar el componente.
+- Se obtiene un dato de una API y se almacena en el estado <code>datos</code>.</p>
+<hr />
+<h2 id="navegacion-con-react-router">Navegación con React Router<a class="headerlink" href="#navegacion-con-react-router" title="Permanent link">#</a></h2>
+<p>React Router es la librería más utilizada para manejar la navegación en aplicaciones React.</p>
+<h3 id="ejemplo-configuracion-basica-de-react-router">Ejemplo: Configuración Básica de React Router<a class="headerlink" href="#ejemplo-configuracion-basica-de-react-router" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BrowserRouter</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Router</span><span class="p">,</span><span class="w"> </span><span class="nx">Routes</span><span class="p">,</span><span class="w"> </span><span class="nx">Route</span><span class="p">,</span><span class="w"> </span><span class="nx">Link</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Home</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Página</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">Inicio</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">About</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Acerca</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">Nosotros</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Link</span><span class="w"> </span><span class="na">to</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span><span class="nx">Inicio</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Link</span><span class="w"> </span><span class="na">to</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="p">&gt;</span><span class="nx">Acerca</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">About</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<p>Explicación:
+- Se usa <code>BrowserRouter</code> para habilitar la navegación en la aplicación.
+- <code>Routes</code> y <code>Route</code> definen qué componente se renderiza en cada URL.
+- <code>Link</code> reemplaza las etiquetas <code>&lt;a&gt;</code> para evitar recargar la página.</p>
+<hr />
+<h2 id="herramientas-de-depuracion-en-react">Herramientas de Depuración en React<a class="headerlink" href="#herramientas-de-depuracion-en-react" title="Permanent link">#</a></h2>
+<p>Para mejorar la productividad, React ofrece varias herramientas de depuración:
+- React Developer Tools: Inspecciona componentes, props y estado en tiempo real.
+- Console.log y Debugger: Para analizar valores y ejecución del código.
+- ESLint y Prettier: Mejoran la calidad y consistencia del código.</p>
+<h3 id="ejemplo-uso-de-consolelog-y-debugger">Ejemplo: Uso de <code>console.log</code> y <code>debugger</code><a class="headerlink" href="#ejemplo-uso-de-consolelog-y-debugger" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">handleClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Botón presionado&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">debugger</span><span class="p">;</span><span class="w"> </span><span class="c1">// Detiene la ejecución en DevTools</span>
+<span class="p">};</span>
+</code></pre></div>
+<hr />
+<h2 id="eslint-en-react">ESLint en React<a class="headerlink" href="#eslint-en-react" title="Permanent link">#</a></h2>
+<p>ESLint es una herramienta que ayuda a mantener un código limpio y sin errores en proyectos JavaScript y TypeScript.</p>
+<pre class="mermaid"><code>graph TD;
+    A[ESLint] --&gt;|Detecta errores| B[Errores de Sintaxis]
+    A --&gt;|Mejora Calidad| C[Buenas Prácticas]
+    A --&gt;|Formateo Automático| D[Prettier]</code></pre>
+<ul>
+<li>Errores de Sintaxis: Detecta problemas en el código antes de ejecutarlo.</li>
+<li>Buenas Prácticas: Evita malas prácticas de programación y código obsoleto.</li>
+<li>Formateo Automático: Se puede integrar con Prettier para un formato de código consistente.</li>
+</ul>
+<h3 id="configuracion-de-eslint">Configuración de ESLint<a class="headerlink" href="#configuracion-de-eslint" title="Permanent link">#</a></h3>
+<p>Después de la inicialización, puedes modificar <code>.eslintrc.js</code> para adaptarlo a tu proyecto:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">env</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">browser</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">es2021</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;eslint:recommended&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;plugin:react/recommended&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;plugin:@typescript-eslint/recommended&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nx">parser</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;@typescript-eslint/parser&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">parserOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">ecmaFeatures</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">jsx</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">ecmaVersion</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;latest&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">sourceType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;react&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;@typescript-eslint&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">rules</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;react/prop-types&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;off&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;indent&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">],</span>
+<span class="w">        </span><span class="s2">&quot;quotes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;double&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="s2">&quot;semi&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;always&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Para ejecutar ESLint en tu código:</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>eslint<span class="w"> </span>src<span class="w"> </span>--fix
+</code></pre></div>
+<p>Esto revisará el código y corregirá errores automáticamente.</p>
+<hr />
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>graph TD;
+    A[React] --&gt;|Interfaces Reutilizables| B[Componentes]
+    A --&gt;|Optimización de Renderizado| C[Virtual DOM]
+    A --&gt;|Seguridad de Código| D[TypeScript]
+    A --&gt;|Gestión de Estados| E[useState y useEffect]
+    A --&gt;|Navegación| F[React Router]
+    A --&gt;|Código Limpio| G[ESLint]</code></pre>
+<ul>
+<li>Interfaces Reutilizables: Los componentes facilitan la modularidad y escalabilidad del código.</li>
+<li>Optimización de Renderizado: React actualiza solo las partes necesarias de la UI mediante el Virtual DOM.</li>
+<li>Seguridad de Código: TypeScript previene errores y mejora la robustez del desarrollo.</li>
+<li>Gestión de Estados: Hooks como <code>useState</code> y <code>useEffect</code> permiten manejar cambios en la UI de manera eficiente.</li>
+<li>Navegación: React Router facilita la creación de aplicaciones con múltiples páginas sin recargas innecesarias.</li>
+<li>Código Limpio: ESLint ayuda a mantener un código organizado y sin errores.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

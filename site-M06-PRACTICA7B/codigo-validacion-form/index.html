@@ -1,0 +1,682 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../codigo-json-form-local-storage/">
+      
+      
+        <link rel="next" href="../cuestionarios.json">
+      
+      
+      <link rel="icon" href="../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Código validación FORM - M06-PRACTICA7B</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cuestionario-y-validaciones" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M06-PRACTICA7B" class="md-header__button md-logo" aria-label="M06-PRACTICA7B" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M06-PRACTICA7B
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Código validación FORM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M06-PRACTICA7B" class="md-nav__button md-logo" aria-label="M06-PRACTICA7B" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    M06-PRACTICA7B
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRACTICA-REACT%2BFORMULARIO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descripción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codigo-json-form-local-storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Código JSON-FORM-LOCALSTORAGE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Código validación FORM
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Código validación FORM
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cuestionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestionario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-campos-en-cuestionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de campos en cuestionario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de campos en cuestionario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validaciones-comunes-en-los-campos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validaciones comunes en los campos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validaciones-en-el-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validaciones en el Frontend:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cuestionarios.json" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archivo json
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cuestionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuestionario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-campos-en-cuestionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de campos en cuestionario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de campos en cuestionario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validaciones-comunes-en-los-campos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validaciones comunes en los campos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validaciones-en-el-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validaciones en el Frontend:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cuestionario-y-validaciones">Cuestionario y validaciones<a class="headerlink" href="#cuestionario-y-validaciones" title="Permanent link">#</a></h1>
+<h2 id="cuestionario">Cuestionario<a class="headerlink" href="#cuestionario" title="Permanent link">#</a></h2>
+<p>El archivo con los cuestionarios para implemntar  <a href="cuestionario.json">cuestionario.json</a>.</p>
+<h2 id="tipos-de-campos-en-cuestionario">Tipos de campos en cuestionario<a class="headerlink" href="#tipos-de-campos-en-cuestionario" title="Permanent link">#</a></h2>
+<ol>
+<li><strong>Campos de Tipo <code>text</code></strong>:</li>
+<li><strong>Descripción</strong>: Este tipo de campo es para <strong>entradas de texto simples</strong>. Se utiliza cuando necesitamos que el usuario ingrese una palabra o una pequeña frase.</li>
+<li><strong>Ejemplo</strong>: Preguntar por el <strong>nombre</strong> o la <strong>edad</strong> del usuario.</li>
+<li><strong>Validación</strong>: Se puede aplicar una restricción sobre el <strong>número de caracteres</strong> que se puede ingresar. Por ejemplo, en el caso del nombre, podemos pedir que tenga entre 3 y 50 caracteres.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;pregunta&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;¿Cuál es tu nombre?&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;restricciones&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Campos de Tipo <code>textarea</code></strong>:</li>
+<li><strong>Descripción</strong>: Este tipo de campo se usa cuando se requiere que el usuario ingrese <strong>más texto</strong> o una respuesta más detallada. Es útil para comentarios, descripciones, o cualquier respuesta más extensa.</li>
+<li><strong>Ejemplo</strong>: Preguntar sobre <strong>comentarios o sugerencias</strong>.</li>
+<li><strong>Validación</strong>: Al igual que el campo <code>text</code>, se puede validar el número de caracteres, pero dado que el contenido puede ser más largo, las restricciones suelen ser mayores.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;comentarios&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;pregunta&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;¿Qué mejorarías en el curso?&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;restricciones&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Campos de Tipo <code>select</code></strong>:</li>
+<li><strong>Descripción</strong>: Este tipo de campo es una lista desplegable de opciones donde el usuario puede seleccionar una opción. Se utiliza cuando se desea limitar las respuestas a un conjunto de opciones predefinidas.</li>
+<li><strong>Ejemplo</strong>: Preguntar sobre <strong>preferencias de sistema operativo</strong> o <strong>nivel de satisfacción</strong>.</li>
+<li><strong>Validación</strong>: No se suele validar la longitud de la respuesta, pero sí se puede limitar las opciones, como en el caso de un <strong><code>select</code></strong> para la <strong>película favorita</strong>, donde el usuario debe elegir entre varias opciones.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;satisfaccion&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;select&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;pregunta&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;¿Qué tan satisfecho estás con el contenido del curso?&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;opciones&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Campos de Tipo <code>check</code></strong> (Casillas de verificación):</li>
+<li><strong>Descripción</strong>: Este tipo de campo se utiliza cuando queremos que el usuario seleccione una o varias opciones de una lista. Se muestra como casillas de verificación (checkboxes).</li>
+<li><strong>Ejemplo</strong>: Preguntar sobre los <strong>dispositivos que usa regularmente</strong> o las <strong>películas que ha visto</strong>.</li>
+<li><strong>Validación</strong>: Se puede validar la cantidad de opciones que el usuario puede seleccionar. Por ejemplo, podemos pedir que seleccione <strong>hasta 2 dispositivos</strong> o <strong>una sola película</strong>.</li>
+<li><strong>Validación en el JSON</strong>: Se puede especificar una validación como <strong><code>max_seleccionados</code></strong> para limitar la cantidad de opciones que el usuario puede marcar.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;productos&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;check&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;pregunta&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;¿Qué dispositivos usas regularmente?&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;opciones&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;smartphone&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;laptop&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tablet&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;smartwatch&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;validacion&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;max_seleccionados&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="validaciones-comunes-en-los-campos"><strong>Validaciones comunes en los campos</strong><a class="headerlink" href="#validaciones-comunes-en-los-campos" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>Restricción de Longitud (<code>min</code> y <code>max</code>)</strong>:</li>
+<li><strong>Descripción</strong>: Se utiliza para limitar la <strong>cantidad de caracteres</strong> que el usuario puede ingresar. Es útil para asegurarse de que las respuestas sean adecuadas. Por ejemplo, no queremos que un nombre tenga solo un carácter o que un comentario sea excesivamente largo.</li>
+<li><strong>Ejemplo</strong>: En un campo de texto como <strong>nombre</strong>, podemos exigir que tenga entre 3 y 50 caracteres.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;restricciones&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Formato de Correo Electrónico</strong>:</li>
+<li><strong>Descripción</strong>: Si un campo está destinado a ingresar un correo electrónico, es importante que el formato sea válido. Generalmente, se valida que el texto contenga el <strong>símbolo @</strong> y un dominio válido.</li>
+<li><strong>Ejemplo</strong>: Validar que el correo esté en el formato correcto y pertenezca a un dominio específico como <code>stucom.com</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;validacion&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;formato&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dominio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stucom.com&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Validación de Edad</strong>:</li>
+<li><strong>Descripción</strong>: A veces, se requiere que el usuario cumpla con una cierta <strong>edad mínima</strong>. Para esto, usamos una <strong>validación de fecha de nacimiento</strong>.</li>
+<li><strong>Ejemplo</strong>: Si necesitamos que el usuario tenga más de 17 años, calculamos la edad a partir de la fecha ingresada y la comparamos con la edad mínima permitida.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;validacion&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;min_edad&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Validación de Selección Múltiple</strong>:</li>
+<li><strong>Descripción</strong>: Si un campo permite seleccionar varias opciones (como <strong><code>check</code></strong>), podemos validar que el usuario seleccione un número específico de opciones. Esto puede ser útil, por ejemplo, para elegir varios <strong>dispositivos</strong> o <strong>películas</strong>.</li>
+<li><strong>Ejemplo</strong>: Validar que el usuario seleccione hasta <strong>2 dispositivos</strong>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;validacion&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;max_seleccionados&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Validación de Opción Única</strong>:</li>
+<li><strong>Descripción</strong>: Si un campo permite seleccionar solo <strong>una opción</strong> (como un <strong><code>select</code></strong>), es importante que el usuario elija solo una. No se necesita una validación adicional para esto, pero se asegura que solo se pueda seleccionar <strong>una opción</strong> a la vez.</li>
+<li><strong>Ejemplo</strong>: El usuario debe seleccionar un <strong>sistema operativo</strong>.</li>
+</ol>
+<hr />
+<h3 id="validaciones-en-el-frontend"><strong>Validaciones en el Frontend</strong>:<a class="headerlink" href="#validaciones-en-el-frontend" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>Validación de Texto</strong>:</li>
+<li>
+<p>Se puede hacer mediante <strong>expresiones regulares</strong> o métodos de validación nativos en JavaScript, como <code>input.value.length</code> para controlar las longitudes mínimas y máximas.</p>
+</li>
+<li>
+<p><strong>Validación de Correo</strong>:</p>
+</li>
+<li>
+<p>Para validar correos electrónicos, puedes usar una expresión regular o una función predefinida en JavaScript para asegurarte de que el correo tenga el formato correcto.</p>
+</li>
+<li>
+<p><strong>Validación de Fecha</strong>:</p>
+</li>
+<li>
+<p>Para validar la edad, puedes comparar la fecha de nacimiento del usuario con la fecha actual y calcular si la edad cumple con el requisito mínimo.</p>
+</li>
+<li>
+<p><strong>Validación de Selección Múltiple</strong>:</p>
+</li>
+<li>En el caso de <strong>checkboxes</strong> o <strong>select multiple</strong>, puedes comprobar la cantidad de opciones seleccionadas usando <code>document.querySelectorAll()</code> para contar los elementos seleccionados.</li>
+</ol>
+<hr />
+<h3 id="conclusion"><strong>Conclusión</strong><a class="headerlink" href="#conclusion" title="Permanent link">#</a></h3>
+<p>Los formularios y sus validaciones son esenciales para obtener datos confiables y evitar errores. Cada tipo de campo se ajusta a una necesidad específica, y las validaciones permiten controlar la calidad de las respuestas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

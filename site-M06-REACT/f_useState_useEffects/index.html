@@ -1,0 +1,929 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../f_publicar_pagina_simple/">
+      
+      
+        <link rel="next" href="../f_props/">
+      
+      
+      <link rel="icon" href="../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>useState_useEffects - M06-REACT</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ficha-tecnica-uso-basico-de-usestate-y-useeffect-en-react" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M06-REACT" class="md-header__button md-logo" aria-label="M06-REACT" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M06-REACT
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              useState_useEffects
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M06-REACT" class="md-nav__button md-logo" aria-label="M06-REACT" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    M06-REACT
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t_introduccion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t_CrearProyecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crear proyecto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_publicar_pagina_simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    useState_useEffects
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    useState_useEffects
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archivos-necesarios-y-estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos Necesarios y Estructura
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos Clave
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptos Clave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-manejo-del-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ``: Manejo del Estado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ``: Manejo del Estado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo Básico de ``
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-manejo-de-efectos-secundarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. ``: Manejo de Efectos Secundarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ``: Manejo de Efectos Secundarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-de-usestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo Básico de useState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-combinando-usestate-y-useeffects" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Combinando useState y useEffects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Combinando useState y useEffects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-cargar-datos-desde-una-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Cargar Datos desde una API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_props/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    props
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_manejoEventos_tipados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eventos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_navegacion_Persistencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navegacion_Persistencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_react_router/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Router
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_ESLint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ESlint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f_depuracion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Depuracion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_sintaxis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sintaxis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conceptos clave
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archivos-necesarios-y-estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos Necesarios y Estructura
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos Clave
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptos Clave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-manejo-del-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ``: Manejo del Estado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ``: Manejo del Estado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo Básico de ``
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-manejo-de-efectos-secundarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. ``: Manejo de Efectos Secundarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ``: Manejo de Efectos Secundarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-de-usestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo Básico de useState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-combinando-usestate-y-useeffects" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Combinando useState y useEffects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Combinando useState y useEffects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-cargar-datos-desde-una-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Cargar Datos desde una API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ficha-tecnica-uso-basico-de-usestate-y-useeffect-en-react">Ficha Técnica: Uso Básico de useState y useEffect en React<a class="headerlink" href="#ficha-tecnica-uso-basico-de-usestate-y-useeffect-en-react" title="Permanent link">#</a></h1>
+<h2 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">#</a></h2>
+<p>En esta ficha se explican los conceptos básicos de los hooks <code>useState</code> y <code>useEffect</code> en React, incluyendo su funcionalidad, sintaxis y ejemplos prácticos.</p>
+<h2 id="archivos-necesarios-y-estructura">Archivos Necesarios y Estructura<a class="headerlink" href="#archivos-necesarios-y-estructura" title="Permanent link">#</a></h2>
+<ul>
+<li><code>App.tsx</code>: Componente principal donde implementaremos <code>useState</code> y <code>useEffect</code>.</li>
+</ul>
+<pre class="mermaid"><code>graph TD;
+    A[Componente Principal] --&gt;|Define Estado con useState| B[Estado del Componente]
+    B --&gt;|Cambio de Estado con setState| C[Renderizado del Componente]
+    A --&gt;|Ejecuta Efectos Secundarios con useEffect| D[Efectos del Componente]
+    D --&gt;|Se Ejecuta en Montaje o Cambio de Dependencias| E[Actualización de Estado]</code></pre>
+<h2 id="conceptos-clave">Conceptos Clave<a class="headerlink" href="#conceptos-clave" title="Permanent link">#</a></h2>
+<h3 id="1-manejo-del-estado">1. ``: Manejo del Estado<a class="headerlink" href="#1-manejo-del-estado" title="Permanent link">#</a></h3>
+<p>El hook <code>useState</code> permite a los componentes funcionales manejar estados internos.</p>
+<h4 id="ejemplo-basico-de">Ejemplo Básico de ``<a class="headerlink" href="#ejemplo-basico-de" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Contador</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contador</span><span class="p">,</span><span class="w"> </span><span class="nx">setContador</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Contador</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">contador</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setContador</span><span class="p">(</span><span class="nx">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}&gt;</span><span class="nx">Incrementar</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Contador</span><span class="p">;</span>
+</code></pre></div>
+<p>Explicación:</p>
+<ul>
+<li><code>useState(0)</code>: Inicializa el estado <code>contador</code> con valor <code>0</code>.</li>
+<li><code>setContador(contador + 1)</code>: Actualiza el estado cuando se presiona el botón.</li>
+<li>Cada actualización de estado provoca un re-renderizado del componente.</li>
+</ul>
+<hr />
+<h3 id="2-manejo-de-efectos-secundarios">2. ``: Manejo de Efectos Secundarios<a class="headerlink" href="#2-manejo-de-efectos-secundarios" title="Permanent link">#</a></h3>
+<p>El hook <code>useEffect</code> permite ejecutar efectos secundarios en componentes funcionales.</p>
+<h4 id="ejemplo-basico-de-usestate">Ejemplo Básico de <code>useState</code><a class="headerlink" href="#ejemplo-basico-de-usestate" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Temporizador</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">segundos</span><span class="p">,</span><span class="w"> </span><span class="nx">setSegundos</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">intervalo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">setSegundos</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalo</span><span class="p">);</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Tiempo</span><span class="w"> </span><span class="nx">transcurrido</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">segundos</span><span class="p">}</span><span class="w"> </span><span class="nx">segundos</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Temporizador</span><span class="p">;</span>
+</code></pre></div>
+<p>Explicación:</p>
+<ul>
+<li><code>useEffect(() =&gt; { ... }, [])</code>: Se ejecuta una sola vez al montar el componente.</li>
+<li><code>setInterval()</code>: Inicia un contador que incrementa el estado cada segundo.</li>
+<li><code>return () =&gt; clearInterval(intervalo)</code>: Limpia el intervalo cuando el componente se desmonta.</li>
+</ul>
+<hr />
+<h3 id="3-combinando-usestate-y-useeffects">3. Combinando <code>useState</code> y <code>useEffects</code><a class="headerlink" href="#3-combinando-usestate-y-useeffects" title="Permanent link">#</a></h3>
+<p>Podemos combinar ambos hooks para actualizar el estado con datos externos, por ejemplo, una API.</p>
+<h4 id="ejemplo-cargar-datos-desde-una-api">Ejemplo: Cargar Datos desde una API<a class="headerlink" href="#ejemplo-cargar-datos-desde-una-api" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Usuario</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">usuario</span><span class="p">,</span><span class="w"> </span><span class="nx">setUsuario</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/users/1&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setUsuario</span><span class="p">({</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">data.name</span><span class="w"> </span><span class="p">}));</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Usuario</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">usuario</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cargando...&quot;</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Usuario</span><span class="p">;</span>
+</code></pre></div>
+<p>Explicación:</p>
+<ul>
+<li><code>useEffect</code> llama a la API al montar el componente.</li>
+<li><code>setUsuario({ nombre: data.name })</code> almacena la respuesta en el estado.</li>
+<li>El usuario se muestra cuando los datos se han cargado.</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">#</a></h2>
+<ul>
+<li><code>useState</code> permite manejar valores dinámicos dentro de un componente.</li>
+<li><code>useEffect</code> ejecuta efectos secundarios como peticiones a APIs o temporizadores.</li>
+<li>Combinando ambos, podemos manejar actualizaciones y sincronización de datos eficientemente.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
