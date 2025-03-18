@@ -1,0 +1,915 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../t_getpost/">
+      
+      
+        <link rel="next" href="../c_publicacion_proyecto/">
+      
+      
+      <link rel="icon" href="../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Práctica GetPost - M09-UNITY</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-getpost" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M09-UNITY" class="md-header__button md-logo" aria-label="M09-UNITY" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M09-UNITY
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práctica GetPost
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M09-UNITY" class="md-nav__button md-logo" aria-label="M09-UNITY" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    M09-UNITY
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t_getpost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teoria GetPost
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Práctica GetPost
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Práctica GetPost
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scene-setup-in-unity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene Setup in Unity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logica-csharp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lógica CSHARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-csharp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CÓDIGO CSHARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-obtener-y-mostrar-datos-desde-una-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 1: Obtener y Mostrar Datos desde una API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-enviar-datos-en-formato-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 2: Enviar Datos en Formato JSON
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-3-autenticacion-con-token-y-manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 3: Autenticación con Token y Manejo de Errores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_publicacion_proyecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica Publicación Juego
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_publicacion_bbdd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BBDD Publicación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t_network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teoría Network (beta)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scene-setup-in-unity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene Setup in Unity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logica-csharp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lógica CSHARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-csharp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CÓDIGO CSHARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-obtener-y-mostrar-datos-desde-una-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 1: Obtener y Mostrar Datos desde una API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-enviar-datos-en-formato-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 2: Enviar Datos en Formato JSON
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-3-autenticacion-con-token-y-manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 3: Autenticación con Token y Manejo de Errores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-getpost">Practica GETPOST<a class="headerlink" href="#practica-getpost" title="Permanent link">#</a></h1>
+<ol>
+<li><strong>GET Request (<code>localhost/api/Unityget</code>)</strong></li>
+<li>
+<p>Fetches data from the API and displays it in the UI.</p>
+</li>
+<li>
+<p><strong>POST Request (<code>localhost/api/Unitypost</code>)</strong></p>
+</li>
+<li>
+<p>Sends user input to the API.</p>
+</li>
+<li>
+<p><strong>Basic UI Elements</strong></p>
+</li>
+<li><strong>Input Field</strong> (for entering data to send via <code>POST</code>).</li>
+<li><strong>Buttons</strong> (for sending GET and POST requests).</li>
+<li><strong>Text Area</strong> (for displaying received data).</li>
+</ol>
+<h2 id="scene-setup-in-unity">Scene Setup in Unity<a class="headerlink" href="#scene-setup-in-unity" title="Permanent link">#</a></h2>
+<ol>
+<li><strong>Create a new Unity UI Canvas</strong>:</li>
+<li>Right-click in the <strong>Hierarchy</strong> → <strong>UI</strong> → <strong>Canvas</strong>.</li>
+<li>
+<p>Set <strong>Canvas Scaler</strong> to <strong>Scale With Screen Size</strong>.</p>
+</li>
+<li>
+<p><strong>Add UI Elements</strong>:</p>
+</li>
+<li><strong>Text</strong> (<code>responseText</code>):<ul>
+<li>Right-click <strong>Canvas</strong> → <strong>UI</strong> → <strong>Text</strong>.</li>
+<li>Change its <strong>name</strong> to <code>ResponseText</code>.</li>
+<li>Set <strong>Text</strong> to <code>"Response: "</code> (empty by default).</li>
+<li>Assign it in the <code>APIManager</code> script.</li>
+</ul>
+</li>
+<li><strong>InputField</strong> (<code>inputField</code> for POST data):<ul>
+<li>Right-click <strong>Canvas</strong> → <strong>UI</strong> → <strong>Input Field</strong>.</li>
+<li>Rename it to <code>InputField</code>.</li>
+<li>Assign it in the script.</li>
+</ul>
+</li>
+<li>
+<p><strong>Buttons</strong>:</p>
+<ul>
+<li><strong>GET Button</strong>:</li>
+<li>Right-click <strong>Canvas</strong> → <strong>UI</strong> → <strong>Button</strong>.</li>
+<li>Rename to <code>GetButton</code>, set text to <code>"GET Data"</code>.</li>
+<li>Add <strong>OnClick Event</strong>, assign <code>APIManager.GetRequest</code>.</li>
+<li><strong>POST Button</strong>:</li>
+<li>Right-click <strong>Canvas</strong> → <strong>UI</strong> → <strong>Button</strong>.</li>
+<li>Rename to <code>PostButton</code>, set text to <code>"POST Data"</code>.</li>
+<li>Add <strong>OnClick Event</strong>, assign <code>APIManager.PostRequest</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Attach the Script</strong>:</p>
+</li>
+<li>Create an <strong>empty GameObject</strong> in the scene and rename it to <code>APIManager</code>.</li>
+<li>Attach the <code>APIManager</code> script.</li>
+<li>
+<p>Drag the <strong>InputField</strong> and <strong>ResponseText</strong> into the script fields in the Inspector.</p>
+</li>
+<li>
+<p><strong>Run &amp; Test</strong>:</p>
+</li>
+<li>Play the scene and use the UI buttons to send API requests.</li>
+</ol>
+<hr />
+<h2 id="logica-csharp">Lógica CSHARP<a class="headerlink" href="#logica-csharp" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>graph TD;
+    A[Usuario] --&gt;|Hace clic en GET| B["GetRequest"]
+    B --&gt; C[StartCoroutine GetData]
+    C --&gt; D["UnityWebRequest.Get (url)"]
+    D --&gt;|Envía solicitud| E["API (localhost/api/Unityget)"]
+    E --&gt;|Devuelve respuesta| F[webRequest.downloadHandler.text]
+    F --&gt; G[Actualiza UI con la respuesta]
+
+    A --&gt;|Hace clic en POST| H[PostRequest]
+    H --&gt; I["StartCoroutine(PostData(inputField.text))"]
+    I --&gt; J[Crea formulario WWWForm]
+    J --&gt; K["UnityWebRequest.Post(url, form)"]
+    K --&gt;|Envía datos| L["API (localhost/api/Unitypost)"]
+    L --&gt;|Devuelve respuesta| M[webRequest.downloadHandler.text]
+    M --&gt; N[Actualiza UI con la respuesta]</code></pre>
+<p><strong>Explicación del Diagrama</strong></p>
+<ol>
+<li><strong>GET Request:</strong></li>
+<li>El usuario presiona el botón <strong>GET</strong>.</li>
+<li>Se ejecuta <code>GetRequest()</code>, que inicia <code>StartCoroutine(GetData())</code>.</li>
+<li>UnityWebRequest envía una solicitud GET a <code>localhost/api/Unityget</code>.</li>
+<li>
+<p>La API devuelve una respuesta que se muestra en la UI.</p>
+</li>
+<li>
+<p><strong>POST Request:</strong></p>
+</li>
+<li>El usuario ingresa datos y presiona el botón <strong>POST</strong>.</li>
+<li>Se ejecuta <code>PostRequest()</code>, que inicia <code>StartCoroutine(PostData())</code>.</li>
+<li>Se crea un formulario <code>WWWForm</code> con los datos del usuario.</li>
+<li>UnityWebRequest envía una solicitud POST a <code>localhost/api/Unitypost</code>.</li>
+<li>La API devuelve una respuesta que se muestra en la UI.</li>
+</ol>
+<hr />
+<h2 id="codigo-csharp">CÓDIGO CSHARP<a class="headerlink" href="#codigo-csharp" title="Permanent link">#</a></h2>
+<p>```CSHARP</p>
+<p>using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.UI;</p>
+<p>public class APIManager : MonoBehaviour
+{
+    // URLs for GET and POST requests
+    public string getUrl = "http://localhost/api/Unityget";
+    public string postUrl = "http://localhost/api/Unitypost";</p>
+<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="n">UI</span><span class="w"> </span><span class="n">Elements</span><span class="p">:</span><span class="w"> </span><span class="n">Input</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">POST</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">display</span><span class="w"> </span><span class="n">responses</span>
+<span class="n">public</span><span class="w"> </span><span class="n">InputField</span><span class="w"> </span><span class="n">inputField</span><span class="p">;</span>
+<span class="n">public</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="n">responseText</span><span class="p">;</span>
+
+<span class="o">//</span><span class="w"> </span><span class="n">Method</span><span class="w"> </span><span class="n">triggered</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">clicked</span>
+<span class="n">public</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="w"> </span><span class="n">GetRequest</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Debug</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="s2">&quot;Starting GET request to: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">getUrl</span><span class="p">);</span>
+<span class="w">    </span><span class="n">StartCoroutine</span><span class="p">(</span><span class="n">GetData</span><span class="p">());</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Start</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">coroutine</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">fetch</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">API</span>
+<span class="p">}</span>
+
+<span class="n">IEnumerator</span><span class="w"> </span><span class="n">GetData</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="n">request</span>
+<span class="w">    </span><span class="n">using</span><span class="w"> </span><span class="p">(</span><span class="n">UnityWebRequest</span><span class="w"> </span><span class="n">webRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnityWebRequest</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">getUrl</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">yield</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">SendWebRequest</span><span class="p">();</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Send</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">response</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">webRequest</span><span class="o">.</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">UnityWebRequest</span><span class="o">.</span><span class="n">Result</span><span class="o">.</span><span class="n">Success</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Debug</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="s2">&quot;GET request successful. Response: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">downloadHandler</span><span class="o">.</span><span class="n">text</span><span class="p">);</span>
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">UI</span>
+<span class="w">            </span><span class="n">responseText</span><span class="o">.</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Response: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">downloadHandler</span><span class="o">.</span><span class="n">text</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Debug</span><span class="o">.</span><span class="n">LogError</span><span class="p">(</span><span class="s2">&quot;GET request failed. Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">error</span><span class="p">);</span>
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="n">fails</span>
+<span class="w">            </span><span class="n">responseText</span><span class="o">.</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">error</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span><span class="w"> </span><span class="n">Method</span><span class="w"> </span><span class="n">triggered</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">POST</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">clicked</span>
+<span class="n">public</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="w"> </span><span class="n">PostRequest</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Debug</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="s2">&quot;Starting POST request to: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">postUrl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; with data: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inputField</span><span class="o">.</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="n">StartCoroutine</span><span class="p">(</span><span class="n">PostData</span><span class="p">(</span><span class="n">inputField</span><span class="o">.</span><span class="n">text</span><span class="p">));</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Start</span><span class="w"> </span><span class="n">coroutine</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">send</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">API</span>
+<span class="p">}</span>
+
+<span class="n">IEnumerator</span><span class="w"> </span><span class="n">PostData</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">jsonData</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">form</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="n">data</span>
+<span class="w">    </span><span class="n">WWWForm</span><span class="w"> </span><span class="n">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">WWWForm</span><span class="p">();</span>
+<span class="w">    </span><span class="n">form</span><span class="o">.</span><span class="n">AddField</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">jsonData</span><span class="p">);</span>
+
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">POST</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">form</span><span class="w"> </span><span class="n">data</span>
+<span class="w">    </span><span class="n">using</span><span class="w"> </span><span class="p">(</span><span class="n">UnityWebRequest</span><span class="w"> </span><span class="n">webRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnityWebRequest</span><span class="o">.</span><span class="n">Post</span><span class="p">(</span><span class="n">postUrl</span><span class="p">,</span><span class="w"> </span><span class="n">form</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">yield</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">SendWebRequest</span><span class="p">();</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Send</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">response</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">webRequest</span><span class="o">.</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">UnityWebRequest</span><span class="o">.</span><span class="n">Result</span><span class="o">.</span><span class="n">Success</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Debug</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="s2">&quot;POST request successful. Response: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">downloadHandler</span><span class="o">.</span><span class="n">text</span><span class="p">);</span>
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="n">received</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">server</span>
+<span class="w">            </span><span class="n">responseText</span><span class="o">.</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Response: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">downloadHandler</span><span class="o">.</span><span class="n">text</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Debug</span><span class="o">.</span><span class="n">LogError</span><span class="p">(</span><span class="s2">&quot;POST request failed. Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">error</span><span class="p">);</span>
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="n">fails</span>
+<span class="w">            </span><span class="n">responseText</span><span class="o">.</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">webRequest</span><span class="o">.</span><span class="n">error</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>}
+````</p>
+<hr />
+<h2 id="ejercicio-1-obtener-y-mostrar-datos-desde-una-api">Ejercicio 1: Obtener y Mostrar Datos desde una API<a class="headerlink" href="#ejercicio-1-obtener-y-mostrar-datos-desde-una-api" title="Permanent link">#</a></h2>
+<p><strong>Objetivo:</strong> Practicar la obtención de datos desde una API y mostrarlos en la UI.</p>
+<p><strong>Instrucciones:</strong></p>
+<ol>
+<li>
+<p>Modifica el código <code>APIManager</code> para obtener datos de la API en formato JSON.</p>
+</li>
+<li>
+<p>La API devolverá un objeto con la estructura:</p>
+</li>
+</ol>
+<p><code>{
+       "message": "¡Hola, mundo!",
+       "status": 200
+   }</code></p>
+<ol>
+<li>Extrae y muestra solo el mensaje en un <strong>Text</strong> de Unity.</li>
+</ol>
+<p><strong>Pistas:</strong></p>
+<ul>
+<li>Usa <code>JsonUtility.FromJson&lt;T&gt;()</code> para deserializar el JSON en un objeto de C#.</li>
+<li>Crea una clase que represente la estructura del JSON.</li>
+</ul>
+<hr />
+<h2 id="ejercicio-2-enviar-datos-en-formato-json">Ejercicio 2: Enviar Datos en Formato JSON<a class="headerlink" href="#ejercicio-2-enviar-datos-en-formato-json" title="Permanent link">#</a></h2>
+<p><strong>Objetivo:</strong> Practicar el envío de datos en formato JSON mediante un <code>POST</code>.</p>
+<p><strong>Instrucciones:</strong></p>
+<ol>
+<li>Modifica la función <code>PostRequest()</code> para enviar los datos en formato JSON en lugar de usar <code>WWWForm</code>.</li>
+<li>Envía un JSON con la estructura:</li>
+</ol>
+<p><code>{
+       "username": "Alumno123",
+       "score": 100
+   }</code></p>
+<ol>
+<li>Muestra en la UI la respuesta de la API.</li>
+</ol>
+<p><strong>Pistas:</strong></p>
+<ul>
+<li>Usa <code>JsonUtility.ToJson()</code> para convertir un objeto C# en JSON.</li>
+<li>Usa <code>webRequest.uploadHandler</code> para enviar el JSON en el <code>POST</code>.</li>
+</ul>
+<hr />
+<h2 id="ejercicio-3-autenticacion-con-token-y-manejo-de-errores">Ejercicio 3: Autenticación con Token y Manejo de Errores<a class="headerlink" href="#ejercicio-3-autenticacion-con-token-y-manejo-de-errores" title="Permanent link">#</a></h2>
+<p><strong>Objetivo:</strong> Implementar un sistema de autenticación simple usando un <strong>token de acceso</strong>.</p>
+<p><strong>Instrucciones:</strong></p>
+<ol>
+<li>Simula un <strong>inicio de sesión</strong> enviando un <code>POST</code> a <code>localhost/api/login</code> coN</li>
+</ol>
+<p><code>{
+       "username": "Alumno123",
+       "password": "clave123"
+   }</code></p>
+<ol>
+<li>La API devolverá un token en la respuesta:</li>
+</ol>
+<p><code>{
+       "token": "abc123xyz"
+   }</code></p>
+<ol>
+<li>Guarda el token y úsalo para futuras solicitudes <code>GET</code> añadiéndolo al <strong>header</strong> de la petición como <code>Authorization: Bearer {token}</code>.</li>
+</ol>
+<p><strong>Pistas:</strong></p>
+<ul>
+<li>Usa <code>webRequest.SetRequestHeader("Authorization", "Bearer " + token)</code> para enviar el token en futuras peticiones.</li>
+<li>Usa <code>PlayerPrefs.SetString("token", token)</code> para guardar el token localmente.</li>
+</ul>
+<hr />
+<h1 id="extras">Extras:<a class="headerlink" href="#extras" title="Permanent link">#</a></h1>
+<ul>
+<li>Agrega un <strong>temporizador</strong> para mostrar mensajes de error si el servidor no responde en 5 segundos.</li>
+<li>Implementar <strong>barra de carga</strong> mientras se hace la petición.</li>
+</ul>
+<hr />
+<h2 id="glosario-de-comandos-y-metodos">Glosario de Comandos y Métodos<a class="headerlink" href="#glosario-de-comandos-y-metodos" title="Permanent link">#</a></h2>
+<h2 id="1-manejo-de-corrutinas"><strong>1. Manejo de Corrutinas</strong><a class="headerlink" href="#1-manejo-de-corrutinas" title="Permanent link">#</a></h2>
+<ul>
+<li><code>StartCoroutine(GetData());</code> → Inicia una <strong>corrutina</strong> para ejecutar una tarea en paralelo (ideal para llamadas de red asíncronas).</li>
+<li><code>IEnumerator GetData()</code> → Define una corrutina que ejecuta código en múltiples frames sin bloquear el juego.</li>
+<li><code>yield return webRequest.SendWebRequest();</code> → Espera la respuesta de la solicitud HTTP antes de continuar la ejecución.</li>
+</ul>
+<h2 id="2-envio-y-recepcion-de-peticiones-http"><strong>2. Envío y Recepción de Peticiones HTTP</strong><a class="headerlink" href="#2-envio-y-recepcion-de-peticiones-http" title="Permanent link">#</a></h2>
+<ul>
+<li><code>UnityWebRequest.Get(url);</code> → Crea una solicitud <strong>GET</strong> para obtener datos de un servidor.</li>
+<li><code>UnityWebRequest.Post(url, form);</code> → Crea una solicitud <strong>POST</strong> para enviar datos al servidor.</li>
+<li><code>webRequest.SendWebRequest();</code> → Envía la solicitud y espera una respuesta.</li>
+<li><code>webRequest.result == UnityWebRequest.Result.Success</code> → Comprueba si la solicitud fue exitosa.</li>
+<li><code>webRequest.downloadHandler.text</code> → Obtiene la respuesta del servidor en formato de texto.</li>
+<li><code>webRequest.error</code> → Devuelve un mensaje de error si la solicitud falla.</li>
+</ul>
+<h2 id="3-manejo-de-formularios"><strong>3. Manejo de Formularios</strong><a class="headerlink" href="#3-manejo-de-formularios" title="Permanent link">#</a></h2>
+<ul>
+<li><code>WWWForm form = new WWWForm();</code> → Crea un formulario para enviar datos mediante <code>POST</code>.</li>
+<li><code>form.AddField("data", jsonData);</code> → Agrega un campo con datos al formulario.</li>
+</ul>
+<h2 id="4-depuracion-y-registros-en-la-consola"><strong>4. Depuración y Registros en la Consola</strong><a class="headerlink" href="#4-depuracion-y-registros-en-la-consola" title="Permanent link">#</a></h2>
+<ul>
+<li><code>Debug.Log("Mensaje");</code> → Imprime un mensaje en la consola de Unity (para debug).</li>
+<li><code>Debug.LogError("Mensaje de error");</code> → Imprime un mensaje de error en la consola de Unity.</li>
+</ul>
+<h2 id="5-ui-en-unity"><strong>5. UI en Unity</strong><a class="headerlink" href="#5-ui-en-unity" title="Permanent link">#</a></h2>
+<ul>
+<li><code>public InputField inputField;</code> → Define un campo de entrada de texto en la interfaz.</li>
+<li><code>public Text responseText;</code> → Define un campo de texto donde se mostrará la respuesta.</li>
+<li><code>responseText.text = "Response: " + webRequest.downloadHandler.text;</code> → Actualiza el texto en la interfaz con la respuesta del servidor.</li>
+</ul>
+<hr />
+<h2 id="php">PHP<a class="headerlink" href="#php" title="Permanent link">#</a></h2>
+<p>Archivo PHP para que maneje dos salidas en GET:</p>
+<ul>
+<li>Texto plano si se pasa ?format=text en la URL.</li>
+<li>JSON por defecto si no se especifica el formato.</li>
+</ul>
+<p>Para POST:</p>
+<ul>
+<li>Devolver JSON con los datos recibidos.</li>
+</ul>
+<p>```PHP &lt;?php</p>
+<p>// Set default response header to JSON format
+header("Content-Type: application/json");</p>
+<p>// Define an associative array to store the response
+$response = array();</p>
+<p>// Determine the request method used by the client
+$method = $_SERVER['REQUEST_METHOD'];</p>
+<p>if ($method === 'GET') {
+    // Check if a specific response format is requested in the URL parameters (e.g., ?format=json or ?format=text)
+    $format = $_GET['format'] ?? 'json';</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">if</span><span class="w"> </span><span class="o">($</span><span class="nt">format</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;text&#39;</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">If</span><span class="w"> </span><span class="err">&#39;text&#39;</span><span class="w"> </span><span class="err">format</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">requested,</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">plain</span><span class="w"> </span><span class="err">text</span><span class="w"> </span><span class="err">response</span>
+<span class="w">    </span><span class="err">header(&quot;</span><span class="n">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="kc">text</span><span class="o">/</span><span class="n">plain</span><span class="s2">&quot;);</span>
+<span class="s2">    echo &quot;</span><span class="n">GET</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="n">received</span><span class="w"> </span><span class="n">successfully</span><span class="o">!</span><span class="s2">&quot;;</span>
+<span class="s2">} else {</span>
+<span class="s2">    // Default response format is JSON</span>
+<span class="s2">    $response</span><span class="cp">[</span><span class="s2">&quot;message&quot;</span><span class="cp">]</span><span class="s2"> = &quot;</span><span class="n">GET</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="n">received</span><span class="w"> </span><span class="n">successfully</span><span class="o">!</span><span class="err">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="err">$response</span><span class="cp">[</span><span class="s2">&quot;status&quot;</span><span class="cp">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">200</span><span class="p">;</span>
+
+<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">Convert</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">into</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">JSON</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">send</span><span class="w"> </span><span class="err">it</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">client</span>
+<span class="w">    </span><span class="err">echo</span><span class="w"> </span><span class="err">json_encode($response)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>} elseif ($method === 'POST') {
+    // Handling POST request
+    // Retrieve data from the POST request, defaulting to "No data received" if not provided
+    $postData = $_POST["data"] ?? "No data received";</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Prepare response</span>
+<span class="no">$</span><span class="n">response</span><span class="p">[</span><span class="s">&quot;message&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;POST request received successfully!&quot;</span><span class="p">;</span>
+<span class="no">$</span><span class="n">response</span><span class="p">[</span><span class="s">&quot;received_data&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="no">$</span><span class="n">postData</span><span class="p">;</span><span class="w"> </span><span class="c1">// Include the received data in the response</span>
+<span class="no">$</span><span class="n">response</span><span class="p">[</span><span class="s">&quot;status&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+
+<span class="c1">// Convert the response array into a JSON string and send it to the client</span>
+<span class="n">echo</span><span class="w"> </span><span class="n">json_encode</span><span class="p">(</span><span class="no">$</span><span class="n">response</span><span class="p">);</span>
+</code></pre></div>
+
+<p>} 
+else {
+    // Handling unsupported request methods (e.g., PUT, DELETE, etc.)
+    http_response_code(405); // Set HTTP status code to 405 (Method Not Allowed)
+    $response["error"] = "Method not allowed";</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Convert the response array into a JSON string and send it to the client</span>
+<span class="n">echo</span><span class="w"> </span><span class="n">json_encode</span><span class="p">(</span><span class="no">$</span><span class="n">response</span><span class="p">);</span>
+</code></pre></div>
+
+<p>}</p>
+<p>?&gt;```</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

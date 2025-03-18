@@ -1,0 +1,695 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../p_getpost/">
+      
+      
+        <link rel="next" href="../c_publicacion_bbdd/">
+      
+      
+      <link rel="icon" href="../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Práctica Publicación Juego - M09-UNITY</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#proyecto-publicacion-de-juegos-en-la-web-con-base-de-datos-compartida" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M09-UNITY" class="md-header__button md-logo" aria-label="M09-UNITY" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M09-UNITY
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práctica Publicación Juego
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M09-UNITY" class="md-nav__button md-logo" aria-label="M09-UNITY" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    M09-UNITY
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t_getpost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teoria GetPost
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p_getpost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica GetPost
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Práctica Publicación Juego
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Práctica Publicación Juego
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-juego-en-unity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del Juego en Unity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exportacion-a-webgl-y-publicacion-en-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exportación a WebGL y Publicación en GitHub Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la Base de Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-del-juego-con-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión del Juego con la Base de Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-puntuaciones-y-estadisticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de Puntuaciones y Estadísticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficios-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beneficios del Proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregables-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entregables Finales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_publicacion_bbdd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BBDD Publicación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t_network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teoría Network (beta)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-juego-en-unity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del Juego en Unity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exportacion-a-webgl-y-publicacion-en-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exportación a WebGL y Publicación en GitHub Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la Base de Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conexion-del-juego-con-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión del Juego con la Base de Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consulta-de-puntuaciones-y-estadisticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consulta de Puntuaciones y Estadísticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficios-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beneficios del Proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregables-finales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entregables Finales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="proyecto-publicacion-de-juegos-en-la-web-con-base-de-datos-compartida">Proyecto: Publicación de Juegos en la Web con Base de Datos Compartida<a class="headerlink" href="#proyecto-publicacion-de-juegos-en-la-web-con-base-de-datos-compartida" title="Permanent link">#</a></h1>
+<p>Objetivo del Proyecto</p>
+<p>El propósito de este proyecto es que cada alumno cree su propio juego en Unity, lo publique en la web y lo conecte a una base de datos común donde se registrarán los jugadores y sus puntuaciones.</p>
+<p>Cada juego estará disponible en GitHub Pages y permitirá:</p>
+<p>✔ Registrar jugadores en una base de datos central.</p>
+<p>✔ Permitir que nuevos jugadores se den de alta desde cualquier juego.</p>
+<p>✔ Guardar las estadísticas de partidas y puntuaciones.</p>
+<p>✔ Consultar un ranking global de jugadores.</p>
+<p>⸻</p>
+<h2 id="creacion-del-juego-en-unity">Creación del Juego en Unity<a class="headerlink" href="#creacion-del-juego-en-unity" title="Permanent link">#</a></h2>
+<p>Un sistema de puntuaciones.
+Un formulario para ingresar el nombre del jugador.
+Un botón para enviar la puntuación a la base de datos.
+Una pantalla de ranking donde se muestren las mejores puntuaciones.</p>
+<p>⸻</p>
+<h2 id="exportacion-a-webgl-y-publicacion-en-github-pages">Exportación a WebGL y Publicación en GitHub Pages<a class="headerlink" href="#exportacion-a-webgl-y-publicacion-en-github-pages" title="Permanent link">#</a></h2>
+<p>¿Por qué WebGL?</p>
+<ul>
+<li>Nos permite jugar directamente desde el navegador sin instalar nada.</li>
+<li>Podemos compartir nuestros juegos fácilmente.</li>
+<li>Es ideal para demostrar proyectos en línea.</li>
+</ul>
+<p>Pasos para publicar el juego en GitHub Pages</p>
+<ol>
+<li>En Unity, cambiar la plataforma del juego a WebGL (File → Build Settings).</li>
+<li>Exportar el juego (Build and Run).</li>
+<li>
+<p>Subir los archivos exportados a GitHub:</p>
+</li>
+<li>
+<p>Crear un repositorio en GitHub.</p>
+</li>
+<li>
+<p>Subir la carpeta del juego (/Build/ y index.html).</p>
+</li>
+<li>
+<p>Habilitar GitHub Pages en Settings → Pages.</p>
+</li>
+<li>Acceder al juego online con la URL generada:</li>
+</ol>
+<p>https://tuusuario.github.io/nombre-del-juego/</p>
+<p>⸻</p>
+<h2 id="creacion-de-la-base-de-datos">Creación de la Base de Datos<a class="headerlink" href="#creacion-de-la-base-de-datos" title="Permanent link">#</a></h2>
+<p>Todos los juegos estarán conectados a una base de datos compartida donde se guardarán:</p>
+<ul>
+<li>Los jugadores registrados (nombre y correo).</li>
+<li>Las partidas jugadas (quién jugó, puntuación y fecha).</li>
+<li>Un ranking global con los mejores jugadores.</li>
+</ul>
+<p>La base de datos estará en un servidor externo y los juegos se comunicarán con ella a través de una API (Interfaz de Programación de Aplicaciones).</p>
+<p>⸻</p>
+<h2 id="conexion-del-juego-con-la-base-de-datos">Conexión del Juego con la Base de Datos<a class="headerlink" href="#conexion-del-juego-con-la-base-de-datos" title="Permanent link">#</a></h2>
+<p>Cada juego se conectará a la base de datos a través de peticiones HTTP:</p>
+<ul>
+<li>Para registrar un jugador:</li>
+<li>El jugador ingresa su nombre y correo.</li>
+<li>Se guarda en la base de datos central.</li>
+<li>Para guardar una puntuación:</li>
+<li>Al terminar una partida, el juego envía la puntuación a la base de datos.</li>
+<li>Para consultar el ranking:</li>
+<li>El juego solicita la lista de los mejores jugadores y la muestra en pantalla.</li>
+</ul>
+<p>Ejemplo de flujo de datos:</p>
+<ol>
+<li>El jugador inicia el juego y se registra.</li>
+<li>El jugador juega una partida y obtiene una puntuación.</li>
+<li>El juego envía la puntuación al servidor.</li>
+<li>El juego muestra el ranking actualizado con los mejores jugadores.</li>
+</ol>
+<p>⸻</p>
+<h2 id="consulta-de-puntuaciones-y-estadisticas">Consulta de Puntuaciones y Estadísticas<a class="headerlink" href="#consulta-de-puntuaciones-y-estadisticas" title="Permanent link">#</a></h2>
+<p>Cada juego incluirá un ranking global donde los jugadores podrán ver:</p>
+<ul>
+<li>Las mejores puntuaciones del día.</li>
+<li>El top 10 de jugadores.</li>
+<li>Sus propias estadísticas de juego.</li>
+</ul>
+<p>Esto permitirá que los alumnos analicen datos y comparen sus puntuaciones con otros compañeros.</p>
+<p>⸻</p>
+<h2 id="beneficios-del-proyecto">Beneficios del Proyecto<a class="headerlink" href="#beneficios-del-proyecto" title="Permanent link">#</a></h2>
+<p>✔ Publicación en la web: Cada alumno tendrá su propio juego accesible desde cualquier dispositivo.
+✔ Trabajo con bases de datos: Aprenderán cómo los juegos guardan información en servidores.
+✔ Conexión con APIs: Experimentarán con el envío y recepción de datos entre Unity y un servidor.
+✔ Competencia amistosa: Los alumnos podrán ver sus rankings y competir de manera saludable.
+✔ Desarrollo de habilidades clave: Diseño de juegos, integración con la web y manejo de datos.</p>
+<p>⸻</p>
+<h2 id="entregables-finales">Entregables Finales<a class="headerlink" href="#entregables-finales" title="Permanent link">#</a></h2>
+<p>Cada alumno deberá entregar:
+Un juego funcional publicado en GitHub Pages.
+El juego debe permitir registrar jugadores y enviar puntuaciones.
+Debe mostrar el ranking de jugadores de la base de datos común.
+Un breve informe explicando el desarrollo y los desafíos enfrentados.</p>
+<p>⸻</p>
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">#</a></h2>
+<p>Al finalizar este proyecto, cada alumno tendrá un juego publicado en la web y conectado a una base de datos real, permitiendo una experiencia más interactiva y competitiva. ¡Es un gran paso para aprender sobre juegos online y sistemas de datos en la nube! </p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
