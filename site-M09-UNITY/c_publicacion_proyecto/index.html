@@ -323,6 +323,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exportación a WebGL y Publicación en GitHub Pages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccionar-webgl-como-plataforma-de-compilacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seleccionar WebGL como plataforma de compilación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desactivar-la-compresion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desactivar la compresión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generar-la-compilacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generar la compilación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publicar-el-juego-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publicar el juego en github
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -471,6 +513,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exportación a WebGL y Publicación en GitHub Pages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccionar-webgl-como-plataforma-de-compilacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seleccionar WebGL como plataforma de compilación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desactivar-la-compresion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desactivar la compresión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generar-la-compilacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generar la compilación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publicar-el-juego-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publicar el juego en github
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -565,26 +649,66 @@ Una pantalla de ranking donde se muestren las mejores puntuaciones.</p>
 <li>Podemos compartir nuestros juegos fácilmente.</li>
 <li>Es ideal para demostrar proyectos en línea.</li>
 </ul>
-<p>Pasos para publicar el juego en GitHub Pages</p>
+<h3 id="seleccionar-webgl-como-plataforma-de-compilacion">Seleccionar WebGL como plataforma de compilación<a class="headerlink" href="#seleccionar-webgl-como-plataforma-de-compilacion" title="Permanent link">#</a></h3>
+<p>1.  Abre Unity y ve a File &gt; Build Settings.
+2.  En la ventana de Build Settings, selecciona WebGL.
+3.  Si WebGL no está en la lista, presiona “Install with Unity Hub” para instalarlo.
+4.  Una vez seleccionado, haz clic en “Switch Platform” (puede tardar unos minutos).</p>
+<h3 id="desactivar-la-compresion">Desactivar la compresión<a class="headerlink" href="#desactivar-la-compresion" title="Permanent link">#</a></h3>
+<p>1.  Ve a Edit &gt; Project Settings.
+ 2.  En la pestaña izquierda, selecciona Player.
+ 3.  Expande la sección Publishing Settings.
+ 4.  Busca la opción Compression Format.
+ 5.  Selecciona Disabled en lugar de Brotli o Gzip.</p>
+<h3 id="generar-la-compilacion">Generar la compilación<a class="headerlink" href="#generar-la-compilacion" title="Permanent link">#</a></h3>
+<p>1.  Vuelve a File &gt; Build Settings.
+2.  Asegúrate de que WebGL sigue seleccionado.
+3.  Haz clic en Build (elige una carpeta para guardar los archivos).
+⸻</p>
+<h2 id="publicar-el-juego-en-github">Publicar el juego en github<a class="headerlink" href="#publicar-el-juego-en-github" title="Permanent link">#</a></h2>
+<p>Para publicar un juego Unity WebGL en GitHub Pages, sigue estos pasos:</p>
+<p>1️⃣ Hacer el Build en Unity
+1. Ve a File &gt; Build Settings y selecciona WebGL.
+2. En Player Settings &gt; Publishing Settings, desactiva la compresión (Compression Format: Disabled).
+3. Haz clic en Build y guarda la salida en una carpeta (Build).</p>
+<p>2️⃣ Crear el repositorio en GitHub
+1. Ve a GitHub y crea un nuevo repositorio.
+2. No añadas archivos como README.md o .gitignore por ahora.</p>
+<p>3️⃣ Subir los archivos a GitHub
+1. Abre la carpeta del Build y crea un archivo index.html con este contenido:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Mi Juego WebGL<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Build/index.html&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <ol>
-<li>En Unity, cambiar la plataforma del juego a WebGL (File → Build Settings).</li>
-<li>Exportar el juego (Build and Run).</li>
-<li>
-<p>Subir los archivos exportados a GitHub:</p>
-</li>
-<li>
-<p>Crear un repositorio en GitHub.</p>
-</li>
-<li>
-<p>Subir la carpeta del juego (/Build/ y index.html).</p>
-</li>
-<li>
-<p>Habilitar GitHub Pages en Settings → Pages.</p>
-</li>
-<li>Acceder al juego online con la URL generada:</li>
+<li>Abre la terminal en la carpeta del Build y ejecuta:</li>
 </ol>
-<p>https://tuusuario.github.io/nombre-del-juego/</p>
-<p>⸻</p>
+<div class="highlight"><pre><span></span><code>git init
+git add .
+git commit -m &quot;Publicación WebGL&quot;
+git branch -M main
+git remote add origin https://github.com/TU-USUARIO/TU-REPO.git
+git push -u origin main
+</code></pre></div>
+<p>4️⃣ Activar GitHub Pages</p>
+<ol>
+<li>En GitHub, ve a Settings &gt; Pages.</li>
+<li>En Branch, selecciona main y la carpeta root.</li>
+<li>Guarda los cambios y espera unos minutos.</li>
+</ol>
+<p>Tu juego estará disponible en:</p>
+<div class="highlight"><pre><span></span><code>https://TU-USUARIO.github.io/TU-REPO/
+</code></pre></div>
 <h2 id="creacion-de-la-base-de-datos">Creación de la Base de Datos<a class="headerlink" href="#creacion-de-la-base-de-datos" title="Permanent link">#</a></h2>
 <p>Todos los juegos estarán conectados a una base de datos compartida donde se guardarán:</p>
 <ul>
