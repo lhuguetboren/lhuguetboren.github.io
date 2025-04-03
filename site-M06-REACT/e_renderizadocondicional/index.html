@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../e_proyecto-react-ts-router-ampliado/">
+      
+      
+        <link rel="next" href="../e_router/">
       
       
       <link rel="icon" href="../assets/stucom.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Ejercicios Autocontenidos sobre useState y useEffect - M06-REACT</title>
+        <title>Renderización condicionada - M06-REACT</title>
       
     
     
@@ -66,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ejercicios-autocontenidos-sobre-usestate-y-useeffect" class="md-skip">
+        <a href="#ejercicio-mostrar-informacion-condicional-de-un-numero" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ejercicios Autocontenidos sobre useState y useEffect
+              Renderización condicionada
             
           </span>
         </div>
@@ -190,17 +194,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -215,7 +221,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             ISSUES
@@ -248,10 +254,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../e_renderizadocondicional/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Renderización condicionada
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -261,6 +288,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enunciado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enunciado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enunciado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivos-tecnicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos técnicos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del Proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-con-huecos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Código con huecos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Código con huecos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types______ts" class="md-nav__link">
+    <span class="md-ellipsis">
+      types/______.ts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components______tsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      components/______.tsx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pageshomepagetsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      pages/HomePage.tsx
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -871,38 +993,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ejercicio-1-diagnostico-de-comportamiento" class="md-nav__link">
+  <a href="#enunciado" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 Ejercicio 1: Diagnóstico de Comportamiento
+      Enunciado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enunciado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivos-tecnicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos técnicos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del Proyecto
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejercicio-2-construccion-guiada-con-condicion-oculta" class="md-nav__link">
+  <a href="#codigo-con-huecos" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ Ejercicio 2: Construcción guiada con condición oculta
+      Código con huecos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Código con huecos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types______ts" class="md-nav__link">
+    <span class="md-ellipsis">
+      types/______.ts
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#components______tsx" class="md-nav__link">
     <span class="md-ellipsis">
-      🌐 Ejercicio 3: Simulación asincrónica con dependencias dinámicas
+      components/______.tsx
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#recomendaciones-para-el-alumnado" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#pageshomepagetsx" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Recomendaciones para el alumnado
+      pages/HomePage.tsx
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -922,121 +1083,92 @@
 
 
 
-<h1 id="ejercicios-autocontenidos-sobre-usestate-y-useeffect">Ejercicios Autocontenidos sobre <code>useState</code> y <code>useEffect</code><a class="headerlink" href="#ejercicios-autocontenidos-sobre-usestate-y-useeffect" title="Permanent link">#</a></h1>
-<p>A continuación se presentan tres ejercicios de complejidad creciente para practicar el uso de los hooks <code>useState</code> y <code>useEffect</code> en React. Cada uno incluye un planteamiento claro y, en algunos casos, fragmentos de código a completar o analizar. Están diseñados para fomentar la comprensión profunda y no pueden resolverse únicamente con una consulta directa.</p>
-<hr />
-<h2 id="ejercicio-1-diagnostico-de-comportamiento">🧩 Ejercicio 1: Diagnóstico de Comportamiento<a class="headerlink" href="#ejercicio-1-diagnostico-de-comportamiento" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Básico</p>
-<blockquote>
-<p>Analiza el siguiente componente y responde:</p>
+<h1 id="ejercicio-mostrar-informacion-condicional-de-un-numero">Ejercicio: Mostrar información condicional de un número<a class="headerlink" href="#ejercicio-mostrar-informacion-condicional-de-un-numero" title="Permanent link">#</a></h1>
+<h2 id="enunciado">Enunciado<a class="headerlink" href="#enunciado" title="Permanent link">#</a></h2>
+<p>Crea un componente llamado <code>AnalizadorNumero</code> que reciba una prop <code>valor</code> de tipo <code>number</code>.</p>
+<p>Este componente debe analizar el número recibido y mostrar condicionalmente la siguiente información, solo si aplica:</p>
 <ul>
-<li>¿Qué mostrará en pantalla?</li>
-<li>¿Por qué se comporta de esa forma?</li>
-<li>¿Existe algún comportamiento no deseado o posible mejora?</li>
+<li>Si el número es <strong>positivo o negativo</strong></li>
+<li>Si el número es <strong>par o impar</strong></li>
+<li>Si es <strong>múltiplo de 2, 3 o 4</strong></li>
 </ul>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ContadorEstatico</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contador</span><span class="p">,</span><span class="w"> </span><span class="nx">setContador</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
-
-<span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">setContador</span><span class="p">(</span><span class="nx">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Contador</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">contador</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<p>Cada condición debe mostrarse como un párrafo independiente solo si se cumple. Si no se cumple, ese párrafo <strong>no debe renderizarse</strong>.</p>
+<h3 id="objetivos-tecnicos">Objetivos técnicos<a class="headerlink" href="#objetivos-tecnicos" title="Permanent link">#</a></h3>
+<ul>
+<li>Crear un componente <code>AnalizadorNumero</code> en <code>components/</code></li>
+<li>Definir las props en <code>types/Numero.ts</code></li>
+<li>Integrar el componente en la página <code>HomePage</code></li>
+<li>Pasar un número fijo (por ejemplo, <code>12</code>) como prop para probar la lógica</li>
+</ul>
+<hr />
+<h2 id="estructura-del-proyecto">Estructura del Proyecto<a class="headerlink" href="#estructura-del-proyecto" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>src/
+├── components/
+│   ├── ui/
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   └── Tarjeta.tsx
+│   └── AnalizadorNumero.tsx
+├── pages/
+│   ├── HomePage.tsx
+│   ├── AboutPage.tsx
+│   └── NotFound.tsx
+├── hooks/
+│   └── useContador.ts
+├── config/
+│   └── routes.ts
+├── types/
+│   └── User.ts
+│   └── Numero.ts
+├── utils/
+│   └── formatearFecha.ts
+├── App.tsx
+└── main.tsx
+</code></pre></div>
+<hr />
+<h2 id="codigo-con-huecos">Código con huecos<a class="headerlink" href="#codigo-con-huecos" title="Permanent link">#</a></h2>
+<h3 id="types______ts"><code>types/______.ts</code><a class="headerlink" href="#types______ts" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">______</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div>
 <hr />
-<h2 id="ejercicio-2-construccion-guiada-con-condicion-oculta">🛠️ Ejercicio 2: Construcción guiada con condición oculta<a class="headerlink" href="#ejercicio-2-construccion-guiada-con-condicion-oculta" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Intermedio</p>
-<blockquote>
-<p>Construye un componente <code>Monitor</code> con las siguientes características:</p>
-<ul>
-<li>Muestra un número entero inicializado en 0.</li>
-<li>Cada 2 segundos, incrementa en +2 <strong>solo si el número actual es divisible entre 4</strong>.</li>
-<li>Un botón permite reiniciar el número a 0.</li>
-<li>Usa <code>useEffect</code> para manejar el intervalo correctamente.</li>
-</ul>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="c1">// Esqueleto de ayuda</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">Monitor</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">valor</span><span class="p">,</span><span class="w"> </span><span class="nx">setValor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<h3 id="components______tsx"><code>components/______.tsx</code><a class="headerlink" href="#components______tsx" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">______</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../types/______&#39;</span><span class="p">;</span>
 
-<span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">intervalo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="c1">// completar la condición</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalo</span><span class="p">);</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="cm">/* dependencias */</span><span class="p">]);</span>
-
+<span class="kd">const</span><span class="w"> </span><span class="nx">AnalizadorNumero</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="p">&lt;</span><span class="nt">______</span><span class="p">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Valor</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">valor</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setValor</span><span class="p">(</span><span class="mf">0</span><span class="p">)}&gt;</span><span class="nx">Reiniciar</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">valor</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="nx">___</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">El</span><span class="w"> </span><span class="nx">número</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">positivo</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">valor</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="nx">__</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">El</span><span class="w"> </span><span class="nx">número</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">negativo</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">valor</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="nx">___</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Es</span><span class="w"> </span><span class="nx">par</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">valor</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="nx">___</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Es</span><span class="w"> </span><span class="nx">impar</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">valor</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="nx">___</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Múltiplo</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="mf">2</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">valor</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="nx">___</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Múltiplo</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="mf">3</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">valor</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="nx">___</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Múltiplo</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="mf">4</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">AnalizadorNumero</span><span class="p">;</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Pregunta de reflexión:</strong> ¿Qué sucede si el array de dependencias está vacío? ¿Y si incluye <code>valor</code>?</p>
-</blockquote>
 <hr />
-<h2 id="ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas">🌐 Ejercicio 3: Simulación asincrónica con dependencias dinámicas<a class="headerlink" href="#ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Avanzado</p>
-<blockquote>
-<p>Crea un componente <code>UsuarioAleatorio</code> que cumpla los siguientes requisitos:</p>
-<ul>
-<li>Muestra un selector de categoría con opciones: <code>admin</code>, <code>editor</code>, <code>viewer</code>.</li>
-<li>Cada vez que se cambia la categoría, se muestra “Cargando…” y luego el nombre simulado de un usuario tras 1 segundo.</li>
-<li>Si se cambia la categoría antes de completarse la respuesta, la respuesta anterior debe ignorarse.</li>
-</ul>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">UsuarioAleatorio</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">categoria</span><span class="p">,</span><span class="w"> </span><span class="nx">setCategoria</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">usuario</span><span class="p">,</span><span class="w"> </span><span class="nx">setUsuario</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">&lt;</span><span class="nt">string</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="na">null</span><span class="p">&gt;(</span><span class="kc">null</span><span class="p">);</span>
+<h3 id="pageshomepagetsx"><code>pages/HomePage.tsx</code><a class="headerlink" href="#pageshomepagetsx" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">_____</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">___________</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../components/AnalizadorNumero&#39;</span><span class="p">;</span>
 
-<span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">cancelado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">setUsuario</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">cancelado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">setUsuario</span><span class="p">(</span><span class="s2">&quot;Usuario &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">));</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">cancelado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="w">      </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">);</span>
-<span class="w">    </span><span class="p">};</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">categoria</span><span class="p">]);</span>
-
+<span class="kd">const</span><span class="w"> </span><span class="nx">HomePage</span><span class="o">:</span><span class="w"> </span><span class="kt">React.___</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">select</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">categoria</span><span class="p">}</span><span class="w"> </span><span class="na">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCategoria</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">option</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="s">&quot;admin&quot;</span><span class="p">&gt;</span><span class="nx">Admin</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">option</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="s">&quot;editor&quot;</span><span class="p">&gt;</span><span class="nx">Editor</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">option</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="s">&quot;viewer&quot;</span><span class="p">&gt;</span><span class="nx">Viewer</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
-
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;{</span><span class="nx">usuario</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sb">`Usuario: </span><span class="si">${</span><span class="nx">usuario</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cargando...&quot;</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Inicio</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">AnalizadorNumero</span><span class="w"> </span><span class="na">_____</span><span class="o">=</span><span class="p">{</span><span class="nx">______</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">HomePage</span><span class="p">;</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Pregunta crítica:</strong> ¿Qué técnica usas para evitar condiciones de carrera entre efectos?</p>
-</blockquote>
-<hr />
-<h2 id="recomendaciones-para-el-alumnado">✅ Recomendaciones para el alumnado<a class="headerlink" href="#recomendaciones-para-el-alumnado" title="Permanent link">#</a></h2>
-<ul>
-<li>Intenta razonar con lápiz y papel antes de escribir código.</li>
-<li>Comenta cada línea de tus componentes para justificar tu lógica.</li>
-<li>Usa el navegador y las DevTools de React para depurar efectos y dependencias.</li>
-<li>Si lo implementas en Vite o CodeSandbox, recuerda observar los re-renderizados.</li>
-</ul>
 <hr />
 
 

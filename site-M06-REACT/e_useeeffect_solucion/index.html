@@ -16,7 +16,7 @@
     
     
       
-        <title>Ejercicios Autocontenidos sobre useState y useEffect - M06-REACT</title>
+        <title>E useeeffect solucion - M06-REACT</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ejercicios-autocontenidos-sobre-usestate-y-useeffect" class="md-skip">
+        <a href="#ejercicio-1-diagnostico-de-comportamiento" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ejercicios Autocontenidos sobre useState y useEffect
+              E useeeffect solucion
             
           </span>
         </div>
@@ -861,8 +861,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -873,9 +871,24 @@
         <li class="md-nav__item">
   <a href="#ejercicio-1-diagnostico-de-comportamiento" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 Ejercicio 1: Diagnóstico de Comportamiento
+      ✅ Ejercicio 1: Diagnóstico de Comportamiento
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="✅ Ejercicio 1: Diagnóstico de Comportamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explicación paso a paso:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -886,6 +899,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="🛠️ Ejercicio 2: Construcción guiada con condición oculta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-por-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Explicación por pasos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -895,14 +923,20 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recomendaciones-para-el-alumnado" class="md-nav__link">
+    <nav class="md-nav" aria-label="🌐 Ejercicio 3: Simulación asincrónica con dependencias dinámicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacion" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Recomendaciones para el alumnado
+      🧠 Explicación:
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -922,19 +956,10 @@
 
 
 
-<h1 id="ejercicios-autocontenidos-sobre-usestate-y-useeffect">Ejercicios Autocontenidos sobre <code>useState</code> y <code>useEffect</code><a class="headerlink" href="#ejercicios-autocontenidos-sobre-usestate-y-useeffect" title="Permanent link">#</a></h1>
-<p>A continuación se presentan tres ejercicios de complejidad creciente para practicar el uso de los hooks <code>useState</code> y <code>useEffect</code> en React. Cada uno incluye un planteamiento claro y, en algunos casos, fragmentos de código a completar o analizar. Están diseñados para fomentar la comprensión profunda y no pueden resolverse únicamente con una consulta directa.</p>
+  <h1>E useeeffect solucion</h1>
+
 <hr />
-<h2 id="ejercicio-1-diagnostico-de-comportamiento">🧩 Ejercicio 1: Diagnóstico de Comportamiento<a class="headerlink" href="#ejercicio-1-diagnostico-de-comportamiento" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Básico</p>
-<blockquote>
-<p>Analiza el siguiente componente y responde:</p>
-<ul>
-<li>¿Qué mostrará en pantalla?</li>
-<li>¿Por qué se comporta de esa forma?</li>
-<li>¿Existe algún comportamiento no deseado o posible mejora?</li>
-</ul>
-</blockquote>
+<h3 id="ejercicio-1-diagnostico-de-comportamiento">✅ <strong>Ejercicio 1: Diagnóstico de Comportamiento</strong><a class="headerlink" href="#ejercicio-1-diagnostico-de-comportamiento" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ContadorEstatico</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contador</span><span class="p">,</span><span class="w"> </span><span class="nx">setContador</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
 
@@ -947,29 +972,36 @@
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Contador</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">contador</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
 <span class="p">};</span>
 </code></pre></div>
-<hr />
-<h2 id="ejercicio-2-construccion-guiada-con-condicion-oculta">🛠️ Ejercicio 2: Construcción guiada con condición oculta<a class="headerlink" href="#ejercicio-2-construccion-guiada-con-condicion-oculta" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Intermedio</p>
-<blockquote>
-<p>Construye un componente <code>Monitor</code> con las siguientes características:</p>
+<h4 id="explicacion-paso-a-paso">🔍 Explicación paso a paso:<a class="headerlink" href="#explicacion-paso-a-paso" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contador</span><span class="p">,</span><span class="w"> </span><span class="nx">setContador</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Declaramos un estado inicial con valor 0.</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setContador</span><span class="p">(</span><span class="nx">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Intentamos incrementar el contador después de 1 segundo.</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+</code></pre></div>
 <ul>
-<li>Muestra un número entero inicializado en 0.</li>
-<li>Cada 2 segundos, incrementa en +2 <strong>solo si el número actual es divisible entre 4</strong>.</li>
-<li>Un botón permite reiniciar el número a 0.</li>
-<li>Usa <code>useEffect</code> para manejar el intervalo correctamente.</li>
+<li>El <code>useEffect</code> se ejecuta <strong>una sola vez al montar el componente</strong>, por el array vacío <code>[]</code>.</li>
+<li>El <code>setTimeout</code> se programa para dentro de 1 segundo.</li>
+<li>Dentro del <code>setTimeout</code>, usamos <code>contador + 1</code>, pero <strong>React cierra sobre el valor inicial</strong>, que es 0 → por tanto siempre suma 0 + 1.</li>
 </ul>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="c1">// Esqueleto de ayuda</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">Monitor</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<p>🔴 <strong>Resultado</strong>: Se mostrará <code>"Contador: 1"</code> después de 1 segundo, pero <strong>nunca aumentará más</strong>.</p>
+<p>📈 <strong>Mejora posible</strong>: Usar función actualizadora para evitar problemas de <em>closure</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">setContador</span><span class="p">(</span><span class="nx">prev</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">prev</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="ejercicio-2-construccion-guiada-con-condicion-oculta">🛠️ <strong>Ejercicio 2: Construcción guiada con condición oculta</strong><a class="headerlink" href="#ejercicio-2-construccion-guiada-con-condicion-oculta" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">Monitor</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">valor</span><span class="p">,</span><span class="w"> </span><span class="nx">setValor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
 
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">intervalo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="c1">// completar la condición</span>
+<span class="w">      </span><span class="nx">setValor</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">prev</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">prev</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">prev</span><span class="p">));</span>
 <span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalo</span><span class="p">);</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="cm">/* dependencias */</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Limpieza del intervalo al desmontar o actualizar.</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span><span class="w"> </span><span class="c1">// Dependencias vacías = solo se monta una vez.</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -979,27 +1011,28 @@
 <span class="w">  </span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Pregunta de reflexión:</strong> ¿Qué sucede si el array de dependencias está vacío? ¿Y si incluye <code>valor</code>?</p>
-</blockquote>
-<hr />
-<h2 id="ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas">🌐 Ejercicio 3: Simulación asincrónica con dependencias dinámicas<a class="headerlink" href="#ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Avanzado</p>
-<blockquote>
-<p>Crea un componente <code>UsuarioAleatorio</code> que cumpla los siguientes requisitos:</p>
+<h4 id="explicacion-por-pasos">🧠 Explicación por pasos:<a class="headerlink" href="#explicacion-por-pasos" title="Permanent link">#</a></h4>
 <ul>
-<li>Muestra un selector de categoría con opciones: <code>admin</code>, <code>editor</code>, <code>viewer</code>.</li>
-<li>Cada vez que se cambia la categoría, se muestra “Cargando…” y luego el nombre simulado de un usuario tras 1 segundo.</li>
-<li>Si se cambia la categoría antes de completarse la respuesta, la respuesta anterior debe ignorarse.</li>
+<li><strong>Estado inicial:</strong> <code>valor = 0</code>.</li>
+<li><strong>Cada 2 segundos:</strong> <code>prev % 4 === 0</code> → si es divisible entre 4, se incrementa en 2.</li>
+<li>Si el valor no es múltiplo de 4, se mantiene igual.</li>
+<li>Botón permite reiniciar manualmente.</li>
 </ul>
-</blockquote>
+<p>📌 <strong>Clave didáctica:</strong> Usar el valor anterior dentro del <code>setValor</code> con función callback es más robusto que depender de <code>valor</code> directamente.</p>
+<p>🧪 <strong>Reflexión sobre dependencias</strong>:</p>
+<ul>
+<li><code>[]</code>: el <code>useEffect</code> no se vuelve a ejecutar si <code>valor</code> cambia. Es correcto porque usamos función en <code>setValor</code>.</li>
+<li><code>[valor]</code>: generaría un nuevo intervalo <strong>cada vez que cambia el valor</strong>, acumulando intervalos → <strong>error común</strong>.</li>
+</ul>
+<hr />
+<h3 id="ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas">🌐 <strong>Ejercicio 3: Simulación asincrónica con dependencias dinámicas</strong><a class="headerlink" href="#ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">UsuarioAleatorio</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">categoria</span><span class="p">,</span><span class="w"> </span><span class="nx">setCategoria</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">usuario</span><span class="p">,</span><span class="w"> </span><span class="nx">setUsuario</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">&lt;</span><span class="nt">string</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="na">null</span><span class="p">&gt;(</span><span class="kc">null</span><span class="p">);</span>
 
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">cancelado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">setUsuario</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">cancelado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">     </span><span class="c1">// Bandera para cancelar si hay cambio de categoría</span>
+<span class="w">    </span><span class="nx">setUsuario</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">          </span><span class="c1">// Indicamos &quot;Cargando...&quot;</span>
 
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">cancelado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1008,10 +1041,10 @@
 <span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">cancelado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="w">      </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">cancelado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">        </span><span class="c1">// Si la categoría cambia, cancelamos este efecto anterior</span>
+<span class="w">      </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">);</span><span class="w">   </span><span class="c1">// Eliminamos el timeout anterior para evitar conflictos</span>
 <span class="w">    </span><span class="p">};</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">categoria</span><span class="p">]);</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">categoria</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Se vuelve a ejecutar cada vez que cambia la categoría</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1026,18 +1059,16 @@
 <span class="w">  </span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Pregunta crítica:</strong> ¿Qué técnica usas para evitar condiciones de carrera entre efectos?</p>
-</blockquote>
-<hr />
-<h2 id="recomendaciones-para-el-alumnado">✅ Recomendaciones para el alumnado<a class="headerlink" href="#recomendaciones-para-el-alumnado" title="Permanent link">#</a></h2>
+<h4 id="explicacion">🧠 Explicación:<a class="headerlink" href="#explicacion" title="Permanent link">#</a></h4>
 <ul>
-<li>Intenta razonar con lápiz y papel antes de escribir código.</li>
-<li>Comenta cada línea de tus componentes para justificar tu lógica.</li>
-<li>Usa el navegador y las DevTools de React para depurar efectos y dependencias.</li>
-<li>Si lo implementas en Vite o CodeSandbox, recuerda observar los re-renderizados.</li>
+<li>Cada vez que cambia <code>categoria</code>:</li>
+<li>Se borra el usuario actual (<code>setUsuario(null)</code>).</li>
+<li>Se programa un <code>setTimeout</code> para simular una carga de red.</li>
+<li>Si el efecto anterior aún no ha terminado, lo <strong>cancelamos manualmente</strong>.</li>
 </ul>
+<p>🛡️ <strong>Técnica clave</strong>: <code>cancelado = true</code> junto con <code>clearTimeout</code> → evita condiciones de carrera y actualizaciones de estado incorrectas en efectos asincrónicos.</p>
 <hr />
+<p>¿Quieres que prepare también una diapositiva o una pizarra virtual con estos tres ejemplos explicados visualmente para usar en clase?</p>
 
 
 

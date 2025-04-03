@@ -16,7 +16,7 @@
     
     
       
-        <title>Ejercicios Autocontenidos sobre useState y useEffect - M06-REACT</title>
+        <title>🔧 Solución: Mostrar datos del clima desde un endpoint externo - M06-REACT</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ejercicios-autocontenidos-sobre-usestate-y-useeffect" class="md-skip">
+        <a href="#solucion-mostrar-datos-del-clima-desde-un-endpoint-externo" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ejercicios Autocontenidos sobre useState y useEffect
+              🔧 Solución: Mostrar datos del clima desde un endpoint externo
             
           </span>
         </div>
@@ -871,36 +871,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ejercicio-1-diagnostico-de-comportamiento" class="md-nav__link">
+  <a href="#estructura-final-del-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 Ejercicio 1: Diagnóstico de Comportamiento
+      Estructura final del proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura final del proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typesclimats" class="md-nav__link">
+    <span class="md-ellipsis">
+      types/Clima.ts
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ejercicio-2-construccion-guiada-con-condicion-oculta" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#componentsclimaactualtsx" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ Ejercicio 2: Construcción guiada con condición oculta
+      components/ClimaActual.tsx
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#pageshomepagetsx" class="md-nav__link">
     <span class="md-ellipsis">
-      🌐 Ejercicio 3: Simulación asincrónica con dependencias dinámicas
+      pages/HomePage.tsx
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#recomendaciones-para-el-alumnado" class="md-nav__link">
+  <a href="#explicacion" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Recomendaciones para el alumnado
+      Explicación
     </span>
   </a>
   
@@ -922,122 +937,93 @@
 
 
 
-<h1 id="ejercicios-autocontenidos-sobre-usestate-y-useeffect">Ejercicios Autocontenidos sobre <code>useState</code> y <code>useEffect</code><a class="headerlink" href="#ejercicios-autocontenidos-sobre-usestate-y-useeffect" title="Permanent link">#</a></h1>
-<p>A continuación se presentan tres ejercicios de complejidad creciente para practicar el uso de los hooks <code>useState</code> y <code>useEffect</code> en React. Cada uno incluye un planteamiento claro y, en algunos casos, fragmentos de código a completar o analizar. Están diseñados para fomentar la comprensión profunda y no pueden resolverse únicamente con una consulta directa.</p>
+<h1 id="solucion-mostrar-datos-del-clima-desde-un-endpoint-externo">🔧 Solución: Mostrar datos del clima desde un endpoint externo<a class="headerlink" href="#solucion-mostrar-datos-del-clima-desde-un-endpoint-externo" title="Permanent link">#</a></h1>
+<h2 id="estructura-final-del-proyecto">Estructura final del proyecto<a class="headerlink" href="#estructura-final-del-proyecto" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>src/
+├── components/
+│   └── ClimaActual.tsx
+├── pages/
+│   └── HomePage.tsx
+├── types/
+│   └── Clima.ts
+</code></pre></div>
 <hr />
-<h2 id="ejercicio-1-diagnostico-de-comportamiento">🧩 Ejercicio 1: Diagnóstico de Comportamiento<a class="headerlink" href="#ejercicio-1-diagnostico-de-comportamiento" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Básico</p>
-<blockquote>
-<p>Analiza el siguiente componente y responde:</p>
-<ul>
-<li>¿Qué mostrará en pantalla?</li>
-<li>¿Por qué se comporta de esa forma?</li>
-<li>¿Existe algún comportamiento no deseado o posible mejora?</li>
-</ul>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ContadorEstatico</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">contador</span><span class="p">,</span><span class="w"> </span><span class="nx">setContador</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<h3 id="typesclimats"><code>types/Clima.ts</code><a class="headerlink" href="#typesclimats" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">ClimaInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">localidad</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">fecha</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">hora</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">temperatura</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<hr />
+<h3 id="componentsclimaactualtsx"><code>components/ClimaActual.tsx</code><a class="headerlink" href="#componentsclimaactualtsx" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ClimaInfo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../types/Clima&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ClimaActual</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">clima</span><span class="p">,</span><span class="w"> </span><span class="nx">setClima</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">&lt;</span><span class="nt">ClimaInfo</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="na">null</span><span class="p">&gt;(</span><span class="kc">null</span><span class="p">);</span>
 
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">setContador</span><span class="p">(</span><span class="nx">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/weather&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">setClima</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="w">      </span><span class="p">});</span>
 <span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
 
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Contador</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">contador</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="p">};</span>
-</code></pre></div>
-<hr />
-<h2 id="ejercicio-2-construccion-guiada-con-condicion-oculta">🛠️ Ejercicio 2: Construcción guiada con condición oculta<a class="headerlink" href="#ejercicio-2-construccion-guiada-con-condicion-oculta" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Intermedio</p>
-<blockquote>
-<p>Construye un componente <code>Monitor</code> con las siguientes características:</p>
-<ul>
-<li>Muestra un número entero inicializado en 0.</li>
-<li>Cada 2 segundos, incrementa en +2 <strong>solo si el número actual es divisible entre 4</strong>.</li>
-<li>Un botón permite reiniciar el número a 0.</li>
-<li>Usa <code>useEffect</code> para manejar el intervalo correctamente.</li>
-</ul>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="c1">// Esqueleto de ayuda</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">Monitor</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">valor</span><span class="p">,</span><span class="w"> </span><span class="nx">setValor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">obtenerColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">temp</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">temp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">temp</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">temp</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;orange&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
 
-<span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">intervalo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="c1">// completar la condición</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalo</span><span class="p">);</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="cm">/* dependencias */</span><span class="p">]);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">clima</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Cargando</span><span class="w"> </span><span class="nx">clima</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Valor</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">valor</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setValor</span><span class="p">(</span><span class="mf">0</span><span class="p">)}&gt;</span><span class="nx">Reiniciar</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span><span class="nx">Localidad</span><span class="o">:</span><span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">clima</span><span class="p">.</span><span class="nx">localidad</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span><span class="nx">Fecha</span><span class="o">:</span><span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">clima</span><span class="p">.</span><span class="nx">fecha</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span><span class="nx">Hora</span><span class="o">:</span><span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">clima</span><span class="p">.</span><span class="nx">hora</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span><span class="nx">Temperatura</span><span class="o">:</span><span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;{</span><span class="s1">&#39; &#39;</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="kt">obtenerColor</span><span class="p">(</span><span class="nx">clima</span><span class="p">.</span><span class="nx">temperatura</span><span class="p">)</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="w">          </span><span class="p">{</span><span class="nx">clima</span><span class="p">.</span><span class="nx">temperatura</span><span class="p">}</span><span class="nx">ºC</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">ClimaActual</span><span class="p">;</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Pregunta de reflexión:</strong> ¿Qué sucede si el array de dependencias está vacío? ¿Y si incluye <code>valor</code>?</p>
-</blockquote>
 <hr />
-<h2 id="ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas">🌐 Ejercicio 3: Simulación asincrónica con dependencias dinámicas<a class="headerlink" href="#ejercicio-3-simulacion-asincronica-con-dependencias-dinamicas" title="Permanent link">#</a></h2>
-<p><strong>Nivel</strong>: Avanzado</p>
-<blockquote>
-<p>Crea un componente <code>UsuarioAleatorio</code> que cumpla los siguientes requisitos:</p>
-<ul>
-<li>Muestra un selector de categoría con opciones: <code>admin</code>, <code>editor</code>, <code>viewer</code>.</li>
-<li>Cada vez que se cambia la categoría, se muestra “Cargando…” y luego el nombre simulado de un usuario tras 1 segundo.</li>
-<li>Si se cambia la categoría antes de completarse la respuesta, la respuesta anterior debe ignorarse.</li>
-</ul>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">UsuarioAleatorio</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">categoria</span><span class="p">,</span><span class="w"> </span><span class="nx">setCategoria</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">usuario</span><span class="p">,</span><span class="w"> </span><span class="nx">setUsuario</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">&lt;</span><span class="nt">string</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="na">null</span><span class="p">&gt;(</span><span class="kc">null</span><span class="p">);</span>
+<h3 id="pageshomepagetsx"><code>pages/HomePage.tsx</code><a class="headerlink" href="#pageshomepagetsx" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ClimaActual</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../components/ClimaActual&#39;</span><span class="p">;</span>
 
-<span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">cancelado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">setUsuario</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">cancelado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">setUsuario</span><span class="p">(</span><span class="s2">&quot;Usuario &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">));</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">cancelado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="w">      </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">);</span>
-<span class="w">    </span><span class="p">};</span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">categoria</span><span class="p">]);</span>
-
+<span class="kd">const</span><span class="w"> </span><span class="nx">HomePage</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">select</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">categoria</span><span class="p">}</span><span class="w"> </span><span class="na">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCategoria</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">option</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="s">&quot;admin&quot;</span><span class="p">&gt;</span><span class="nx">Admin</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">option</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="s">&quot;editor&quot;</span><span class="p">&gt;</span><span class="nx">Editor</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">option</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="s">&quot;viewer&quot;</span><span class="p">&gt;</span><span class="nx">Viewer</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
-
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;{</span><span class="nx">usuario</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sb">`Usuario: </span><span class="si">${</span><span class="nx">usuario</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cargando...&quot;</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Inicio</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">ClimaActual</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">HomePage</span><span class="p">;</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Pregunta crítica:</strong> ¿Qué técnica usas para evitar condiciones de carrera entre efectos?</p>
-</blockquote>
 <hr />
-<h2 id="recomendaciones-para-el-alumnado">✅ Recomendaciones para el alumnado<a class="headerlink" href="#recomendaciones-para-el-alumnado" title="Permanent link">#</a></h2>
+<h2 id="explicacion">Explicación<a class="headerlink" href="#explicacion" title="Permanent link">#</a></h2>
 <ul>
-<li>Intenta razonar con lápiz y papel antes de escribir código.</li>
-<li>Comenta cada línea de tus componentes para justificar tu lógica.</li>
-<li>Usa el navegador y las DevTools de React para depurar efectos y dependencias.</li>
-<li>Si lo implementas en Vite o CodeSandbox, recuerda observar los re-renderizados.</li>
+<li><strong>ClimaInfo</strong>: Define el tipo con los campos necesarios para representar los datos del tiempo.</li>
+<li><strong>ClimaActual</strong>: Es un componente funcional que, al montarse, realiza una petición al endpoint y guarda la respuesta en el estado. Muestra los datos una vez disponibles, y aplica estilos en línea para reflejar el valor de temperatura.</li>
+<li><strong>HomePage</strong>: Integra el componente <code>ClimaActual</code> directamente dentro del <code>return</code>.</li>
 </ul>
-<hr />
+<p>Este componente puede usarse también en otras páginas si se desea reutilizar.</p>
+<blockquote>
+<p>Nota: Puedes reemplazar la URL del endpoint por un mock local si estás haciendo pruebas sin acceso a una API real.</p>
+</blockquote>
 
 
 
