@@ -1,0 +1,71 @@
+{
+    "title": "Explorant index.html pas a pas",
+    "description": "Tour detallat per entendre com funciona el formulari HTML i la petició AJAX amb fetch().",
+    "steps": [
+      {
+        "file": "index.html",
+        "line": 1,
+        "description": "👋 **Benvingut!** Aquest fitxer conté el formulari i la lògica `fetch()`.\n\n📂 **Ara obre aquest fitxer al navegador** (doble clic o amb Live Server) per veure què fa.\n\n🔁 Quan ho hagis vist, torna aquí i segueix el tour!"
+      },
+      {
+        "file": "index.html",
+        "line": 6,
+        "description": "📌 Aquest és l'encapçalament principal de la pàgina: 'AJAX amb Fetch - GET'. L'usuari veurà això com a títol."
+      },
+      {
+        "file": "index.html",
+        "line": 7,
+        "description": "🔢 Primer `input`: el número 1 que introduirà l'usuari. Té com a ID `n1`."
+      },
+      {
+        "file": "index.html",
+        "line": 8,
+        "description": "🔢 Segon `input`: el número 2. Té com a ID `n2`."
+      },
+      {
+        "file": "index.html",
+        "line": 9,
+        "description": "▶️ Aquest botó crida la funció `ferConsulta()` quan es fa clic."
+      },
+      {
+        "file": "index.html",
+        "line": 11,
+        "description": "📥 Aquest `div` servirà per mostrar el resultat de la suma. El modificarem des del JavaScript."
+      },
+      {
+        "file": "index.html",
+        "line": 14,
+        "description": "💡 Aquí comença la funció `ferConsulta()`, on agafem els valors dels inputs."
+      },
+      {
+        "file": "index.html",
+        "line": 16,
+        "description": "🧱 Construïm l'URL de la petició amb els valors de `n1` i `n2`, utilitzant una template string."
+      },
+      {
+        "file": "index.html",
+        "line": 17,
+        "description": "🚀 Amb `fetch()` enviem una petició GET al fitxer PHP amb aquests paràmetres."
+      },
+      {
+        "file": "index.html",
+        "line": 18,
+        "description": "📬 Esperem la resposta i la convertim a JSON amb `.json()`."
+      },
+      {
+        "file": "index.html",
+        "line": 19,
+        "description": "🧠 Quan la resposta arriba, accedim a `data.resultat` i l’afegim al `div#resultat` del DOM."
+      },
+      {
+        "file": "index.html",
+        "line": 21,
+        "description": "❗️ Aquí gestionem errors de xarxa o problemes amb la petició `fetch()` amb `.catch()`."
+      },{
+        "file": "example.php",
+        "line": 0,
+        "description": "👋 **Benvingut!** Aquest fitxer conté el formulari i la lògica `fetch()`.\n\n📂 **Ara obre aquest fitxer al navegador** (doble clic o amb Live Server) per veure què fa.\n\n🔁 Quan ho hagis vist, torna aquí i segueix el tour!"
+      }
+    ]
+  }
+  

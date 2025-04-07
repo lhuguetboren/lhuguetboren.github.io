@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemple Callback amb setTimeout</title>
+</head>
+<body>
+  <h1>Obre la consola per veure el resultat</h1>
+
+  <script>
+    // Exemple de funció callback amb setTimeout
+
+    // Aquesta funció rep una altra funció com a paràmetre (callback)
+    function esperarISaludar(callback) {
+      // Espera 2 segons abans d’executar el codi dins de setTimeout
+      setTimeout(function () {
+        console.log("Han passat 2 segons.");
+        
+        // Un cop passats els 2 segons, s’executa la funció callback
+        callback();
+      }, 2000);
+    }
+
+    // Aquesta és la funció que es passarà com a callback
+    function mostrarSalutacio() {
+      console.log("Hola des de la funció callback!");
+    }
+
+    // Cridem la funció principal i li passem la callback
+    esperarISaludar(mostrarSalutacio);
+
+    // Sortida esperada a la consola:
+    // (Després de 2 segons)
+    // Han passat 2 segons.
+    // Hola des de la funció callback!
+  </script>
+</body>
+</html>

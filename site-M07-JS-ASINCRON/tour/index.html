@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemple AJAX amb Fetch</title>
+</head>
+<body>
+  <h2>Formulari AJAX</h2>
+  <form id="formulari">
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h3>Resposta del servidor:</h3>
+  <div id="resposta"></div>
+
+  <script>
+    document.getElementById("formulari").addEventListener("submit", function(e) {
+      e.preventDefault(); // Evita que es recarregui la pàgina
+
+      const nom = document.getElementById("nom").value;
+      const dades = new URLSearchParams();
+      dades.append("nom", nom);
+
+      fetch("servidor.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: dades
+      })
+      .then(resp => {
+        if (!resp.ok) throw new Error("Error HTTP: " + resp.status);
+        return resp.json(); // canvia per resp.text() si el servidor retorna XML o text pla
+      })
+      .then(data => {
+        document.getElementById("resposta").innerText = `Hola ${data.nom}`;
+      })
+      .catch(error => {
+        document.getElementById("resposta").innerText = "Error: " + error.message;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1024 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ajax_xmlhttprequest/">
+      
+      
+        <link rel="next" href="../webSocket/">
+      
+      
+      <link rel="icon" href="../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>fetch i promises - M07-JS-ASINCRON</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-ajax-amb-fetch" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M07-JS-ASINCRON" class="md-header__button md-logo" aria-label="M07-JS-ASINCRON" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M07-JS-ASINCRON
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              fetch i promises
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M07-JS-ASINCRON" class="md-nav__button md-logo" aria-label="M07-JS-ASINCRON" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    M07-JS-ASINCRON
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CONTENIDO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            CONTENIDO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../callback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ¿Callback?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ajax_xmlhttprequest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xmlhttprequest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    fetch i promises
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    fetch i promises
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comparativa-xmlhttprequest-vs-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ Comparativa: XMLHttpRequest vs Fetch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚖️ Comparativa: XMLHttpRequest vs Fetch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flux-de-vida-duna-promise" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Flux de vida d’una Promise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-de-peticio-get-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Exemple de petició GET amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-de-peticio-post-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 Exemple de petició POST amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcions-utils-de-la-resposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Funcions útils de la resposta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enviament-de-fitxers-amb-fetch-i-formdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Enviament de fitxers amb Fetch i FormData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flux-de-peticio-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Flux de petició amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tractament-derrors-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❗️Tractament d’errors amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-dus-habituals-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Casos d’ús habituals amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossari-de-termes-clau-per-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Glossari de termes clau per Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternativa-axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Alternativa: Axios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Alternativa: Axios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avantatges-de-axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avantatges de Axios:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webSocket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comparativa-xmlhttprequest-vs-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ Comparativa: XMLHttpRequest vs Fetch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚖️ Comparativa: XMLHttpRequest vs Fetch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flux-de-vida-duna-promise" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Flux de vida d’una Promise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-de-peticio-get-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Exemple de petició GET amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-de-peticio-post-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 Exemple de petició POST amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcions-utils-de-la-resposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Funcions útils de la resposta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enviament-de-fitxers-amb-fetch-i-formdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Enviament de fitxers amb Fetch i FormData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flux-de-peticio-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Flux de petició amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tractament-derrors-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❗️Tractament d’errors amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-dus-habituals-amb-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Casos d’ús habituals amb Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossari-de-termes-clau-per-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Glossari de termes clau per Fetch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternativa-axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Alternativa: Axios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Alternativa: Axios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avantatges-de-axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avantatges de Axios:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3-ajax-amb-fetch">3. AJAX amb Fetch<a class="headerlink" href="#3-ajax-amb-fetch" title="Permanent link">#</a></h1>
+<p>La funció <code>fetch()</code> és una alternativa moderna a <code>XMLHttpRequest</code> per fer peticions HTTP. És més neta i senzilla d’utilitzar, basada en promeses (<code>Promise</code>) i compatible amb async/await.</p>
+<h2 id="comparativa-xmlhttprequest-vs-fetch">⚖️ Comparativa: XMLHttpRequest vs Fetch<a class="headerlink" href="#comparativa-xmlhttprequest-vs-fetch" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th><code>XMLHttpRequest</code></th>
+<th><code>fetch()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API basada en</td>
+<td>Esdeveniments (<code>onreadystatechange</code>)</td>
+<td>Promeses (<code>.then()</code>, <code>.catch()</code>)</td>
+</tr>
+<tr>
+<td>Sintaxi</td>
+<td>Verbosa i complexa</td>
+<td>Clara i moderna</td>
+</tr>
+<tr>
+<td>Tractament d'errors</td>
+<td>S’ha de gestionar amb estats i codis manualment</td>
+<td>Es pot gestionar amb <code>catch()</code></td>
+</tr>
+<tr>
+<td>Suport per JSON</td>
+<td>Manual (<code>JSON.parse()</code>, <code>JSON.stringify()</code>)</td>
+<td>Integrat (<code>response.json()</code>)</td>
+</tr>
+<tr>
+<td>Càrrega de fitxers</td>
+<td>Mitjançant <code>FormData</code> + <code>send()</code></td>
+<td>Mitjançant <code>FormData</code> + <code>body</code></td>
+</tr>
+<tr>
+<td>Cancel·lació de peticions</td>
+<td>No suportada per defecte</td>
+<td>Amb <code>AbortController</code></td>
+</tr>
+<tr>
+<td>Suport en navegadors antics</td>
+<td>Molt compatible</td>
+<td>Millor en navegadors moderns</td>
+</tr>
+</tbody>
+</table>
+<p>Una <strong>promesa (Promise)</strong> representa una operació asíncrona que encara no ha finalitzat, però que ho farà en el futur. Pot estar en un d’aquests tres estats:</p>
+<ul>
+<li><strong>Pending</strong>: en espera (pendent)</li>
+<li><strong>Fulfilled</strong>: resolta amb èxit</li>
+<li><strong>Rejected</strong>: rebutjada per un error</li>
+</ul>
+<h3 id="flux-de-vida-duna-promise">🔄  Flux de vida d’una Promise<a class="headerlink" href="#flux-de-vida-duna-promise" title="Permanent link">#</a></h3>
+<pre class="mermaid"><code>graph TD
+    A["Promise creada (pending)"] --&gt;|Operació completada| B["resolve() → fulfilled"]
+    A --&gt;|Error o fallada| C["reject() → rejected"]
+    B --&gt; D["then() → gestiona èxit"]
+    C --&gt; E["catch() → gestiona error"]</code></pre>
+<p>Les promeses permeten escriure codi més net i estructurat per gestionar operacions asíncrones com peticions a servidors, temporitzadors, lectura de fitxers, etc.</p>
+<hr />
+<h2 id="exemple-de-peticio-get-amb-fetch">🚀 Exemple de petició GET amb Fetch<a class="headerlink" href="#exemple-de-peticio-get-amb-fetch" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">configFetch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;ejemplo.php?n1=2&amp;n2=3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">configFetch</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">objetoJSON</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">objetoJSON</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error en la petició&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">));</span>
+</code></pre></div>
+<hr />
+<h2 id="exemple-de-peticio-post-amb-fetch">📤 Exemple de petició POST amb Fetch<a class="headerlink" href="#exemple-de-peticio-post-amb-fetch" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">configFetch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;n1=2&amp;n2=3&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;ejemplo.php&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">configFetch</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">objetoJSON</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">objetoJSON</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+</code></pre></div>
+<hr />
+<h2 id="funcions-utils-de-la-resposta">🧰 Funcions útils de la resposta<a class="headerlink" href="#funcions-utils-de-la-resposta" title="Permanent link">#</a></h2>
+<p>Aquí tens la <strong>taula ampliada</strong> amb més funcions i propietats útils de la resposta (<code>Response</code>) en <code>fetch</code>:</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th><strong>Funció / Propietat</strong></th>
+<th><strong>Descripció</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response.ok</code></td>
+<td>Indica si la resposta té un codi d'estat entre 200 i 299 (èxit).</td>
+</tr>
+<tr>
+<td><code>response.status</code></td>
+<td>Retorna el codi d'estat HTTP (ex: 200, 404, 500...).</td>
+</tr>
+<tr>
+<td><code>response.statusText</code></td>
+<td>Missatge de l'estat HTTP (ex: "OK", "Not Found").</td>
+</tr>
+<tr>
+<td><code>response.url</code></td>
+<td>Retorna la URL final de la resposta (pot ser diferent si hi ha redirecció).</td>
+</tr>
+<tr>
+<td><code>response.headers</code></td>
+<td>Objecte amb totes les capçaleres de la resposta (<code>Headers</code>).</td>
+</tr>
+<tr>
+<td><code>response.json()</code></td>
+<td>Converteix el cos de la resposta a un objecte JSON (promesa).</td>
+</tr>
+<tr>
+<td><code>response.text()</code></td>
+<td>Retorna el cos de la resposta com a text (promesa).</td>
+</tr>
+<tr>
+<td><code>response.blob()</code></td>
+<td>Retorna el cos com a <code>Blob</code>, útil per descarregar arxius.</td>
+</tr>
+<tr>
+<td><code>response.formData()</code></td>
+<td>Retorna el cos com a <code>FormData</code>, habitual en formularis.</td>
+</tr>
+<tr>
+<td><code>response.arrayBuffer()</code></td>
+<td>Retorna el cos com a dades binàries (<code>ArrayBuffer</code>).</td>
+</tr>
+<tr>
+<td><code>response.redirected</code></td>
+<td>Indica si la resposta és resultat d'una redirecció automàtica (<code>true/false</code>).</td>
+</tr>
+<tr>
+<td><code>response.type</code></td>
+<td>Tipus de resposta (<code>basic</code>, <code>cors</code>, <code>opaque</code>, etc.).</td>
+</tr>
+<tr>
+<td><code>response.bodyUsed</code></td>
+<td>Indica si el cos de la resposta ja s'ha llegit (<code>true/false</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>📌 <strong>Nota</strong>: Les funcions com <code>.json()</code>, <code>.text()</code> i <code>.blob()</code> retornen <strong>promeses</strong>, perquè l'accés al cos pot ser asíncron.</p>
+<h2 id="enviament-de-fitxers-amb-fetch-i-formdata">📦 Enviament de fitxers amb Fetch i FormData<a class="headerlink" href="#enviament-de-fitxers-amb-fetch-i-formdata" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;arxiu&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;enviarFitxer()&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">enviarFitxer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;arxiu&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;arxiu&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">control</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">  </span><span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;param1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;valor1&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;param2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;valor2&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;http://localhost:8089/endpoint&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">form</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">resp</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">resp</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">respJSON</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">respJSON</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="flux-de-peticio-amb-fetch">📊 Flux de petició amb Fetch<a class="headerlink" href="#flux-de-peticio-amb-fetch" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    participant JS
+    participant Server
+
+    JS-&gt;&gt;Server: fetch(url, config)
+    Server--&gt;&gt;JS: Retorna resposta (JSON/XML/Text)
+    JS-&gt;&gt;JS: then() → processar resposta</code></pre>
+<hr />
+<h2 id="tractament-derrors-amb-fetch">❗️Tractament d’errors amb Fetch<a class="headerlink" href="#tractament-derrors-amb-fetch" title="Permanent link">#</a></h2>
+<p><code>fetch()</code> <strong>no llença errors automàticament</strong> si el servidor retorna un codi com 404 o 500. Cal verificar-ho manualment:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;endpoint.php&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Error HTTP: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;S&#39;ha produït un error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">));</span>
+</code></pre></div>
+<p>Altres errors habituals:
+- ❌ Error de sintaxi a <code>fetch</code> (oblit de <code>{}</code> o cometes)
+- ❌ <code>body</code> mal format (ex. no usar <code>JSON.stringify()</code> per a JSON)
+- ❌ Capçalera <code>Content-Type</code> no coincident amb el cos
+- ❌ Servidor sense suport per CORS (error de seguretat en cross-domain)</p>
+<hr />
+<h2 id="casos-dus-habituals-amb-fetch">💡 Casos d’ús habituals amb Fetch<a class="headerlink" href="#casos-dus-habituals-amb-fetch" title="Permanent link">#</a></h2>
+<ul>
+<li>🌐 <strong>Consultes d’API REST</strong>: recuperació de dades des de serveis externs.</li>
+<li>✏️ <strong>Formularis de contacte</strong>: enviament dinàmic de dades sense reload.</li>
+<li>🖼️ <strong>Carrega d’imatges i fitxers</strong>: gestió de fitxers mitjançant FormData.</li>
+<li>📊 <strong>Aplicacions SPA</strong>: Fetch permet la càrrega dinàmica de contingut en aplicacions d’una sola pàgina.</li>
+</ul>
+<hr />
+<h2 id="glossari-de-termes-clau-per-fetch">📘 Glossari de termes clau per Fetch<a class="headerlink" href="#glossari-de-termes-clau-per-fetch" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Definició</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fetch()</code></td>
+<td>Funció moderna per fer peticions HTTP en JavaScript</td>
+</tr>
+<tr>
+<td><code>Promise</code></td>
+<td>Objecte que representa un resultat futur (èxit o error)</td>
+</tr>
+<tr>
+<td><code>async/await</code></td>
+<td>Sintaxi moderna per treballar amb promeses de forma més clara</td>
+</tr>
+<tr>
+<td><code>headers</code></td>
+<td>Objecte amb les capçaleres HTTP a enviar amb la petició</td>
+</tr>
+<tr>
+<td><code>body</code></td>
+<td>Contingut que s’envia en una petició POST/PUT</td>
+</tr>
+<tr>
+<td><code>Content-Type</code></td>
+<td>Tipus de dades que s’envien (ex. JSON, form-urlencoded, multipart...)</td>
+</tr>
+<tr>
+<td><code>response.ok</code></td>
+<td>Booleà que indica si la resposta és exitosa (status 200–299)</td>
+</tr>
+<tr>
+<td><code>response.status</code></td>
+<td>Codi HTTP retornat pel servidor (ex. 200, 404)</td>
+</tr>
+<tr>
+<td><code>response.json()</code></td>
+<td>Converteix la resposta a objecte JavaScript (si el contingut és JSON)</td>
+</tr>
+<tr>
+<td><code>response.text()</code></td>
+<td>Llegeix la resposta com a text pla</td>
+</tr>
+<tr>
+<td><code>FormData</code></td>
+<td>Objecte per encapsular fitxers i camps de formulari per POST</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="alternativa-axios">🧪 Alternativa: Axios<a class="headerlink" href="#alternativa-axios" title="Permanent link">#</a></h2>
+<p><strong>Axios</strong> és una llibreria basada en promeses com <code>fetch</code>, però amb més funcionalitats per defecte:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>axios
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;axios&#39;</span><span class="p">;</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/endpoint&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">edat</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error a la petició&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="avantatges-de-axios">Avantatges de Axios:<a class="headerlink" href="#avantatges-de-axios" title="Permanent link">#</a></h3>
+<ul>
+<li>Suporta automàticament JSON</li>
+<li>Gestiona errors HTTP com excepcions</li>
+<li>Permet cancel·lar peticions</li>
+<li>Funciona tant al navegador com a Node.js</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

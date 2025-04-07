@@ -1,0 +1,37 @@
+{
+    "title": "AJAX amb Fetch i PHP",
+    "description": "Aprèn a fer una petició AJAX amb `fetch()` des d'un formulari i rebre la resposta amb PHP.",
+    "steps": [
+      {
+        "file": "index.html",
+        "line": 10,
+        "description": "Aquest formulari recull el nom de l'usuari i activa el comportament asíncron amb JavaScript."
+      },
+      {
+        "file": "index.html",
+        "line": 19,
+        "description": "Aquí interceptem el `submit` per evitar el comportament clàssic del formulari."
+      },
+      {
+        "file": "index.html",
+        "line": 25,
+        "description": "Aquesta crida `fetch()` envia el nom al servidor via POST i espera una resposta en format JSON."
+      },
+      {
+        "file": "index.html",
+        "line": 31,
+        "description": "Si tot va bé, mostrem el nom rebut dins el `div` amb id `resposta`."
+      },
+      {
+        "file": "servidor.php",
+        "line": 4,
+        "description": "Aquest fitxer PHP rep la petició i configura les capçaleres per respondre amb JSON."
+      },
+      {
+        "file": "servidor.php",
+        "line": 10,
+        "description": "Aquí preparem la resposta com un array i l’enviem al client amb `json_encode()`."
+      }
+    ]
+  }
+  

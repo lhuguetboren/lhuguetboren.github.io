@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemple AJAX Fetch</title>
+</head>
+<body>
+  <h2>AJAX amb Fetch - GET</h2>
+  <input type="number" id="n1" placeholder="Número 1">
+  <input type="number" id="n2" placeholder="Número 2">
+  <button onclick="ferConsulta()">Enviar</button>
+
+  <div id="resultat"></div>
+function ferConsulta() {
+  const n1 = document.getElementById("n1").value;
+  const n2 = document.getElementById("n2").value;
+
+ 
+  <script>
+    function ferConsulta() {
+      const n1 = document.getElementById("n1").value;
+      const n2 = document.getElementById("n2").value;
+
+function ferConsulta() {
+  const n1 = document.getElementById("n1").value;
+  const n2 = document.getElementById("n2").value;
+
+  fetch(`exemple.php?n1=${n1}&n2=${n2}`)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("resultat").innerText = `Resultat: ${data.resultat}`;
+    })
+    .catch(err => console.error("Error en la petició", err));
+function ferConsulta() {
+alert("hola");
+  const n1 = document.getElementById("n1").value;
+  const n2 = document.getElementById("n2").value;
+
+  fetch(`exemple.php?n1=${n1}&n2=${n2}`)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("resultat").innerText = `Resultat: ${data.resultat}`;
+    })
+    .catch(err => console.error("Error en la petició", err));
+}}      fetch(`exemple.php?n1=${n1}&n2=${n2}`, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("resultat").innerText = `Resultat: ${data.resultat}`;
+      })
+      .catch(error => {
+        console.error("Error en la petició", error);
+      });
+    }
+  </script>
+</body>
+</html>
