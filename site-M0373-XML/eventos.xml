@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventos>
+    <evento>
+        <id>1</id>
+        <Descripcion>evento 1</Descripcion>
+    </evento>
+    <evento>
+        <id>2</id>
+        <Descripcion>evento 2</Descripcion>
+    </evento>
+</eventos>
