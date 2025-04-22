@@ -1,0 +1,791 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../issues/">
+      
+      
+      
+      <link rel="icon" href="../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>endpoints - M06-7-9PRACTICA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#endpoints-rest-http" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M06-7-9PRACTICA" class="md-header__button md-logo" aria-label="M06-7-9PRACTICA" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M06-7-9PRACTICA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              endpoints
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M06-7-9PRACTICA" class="md-nav__button md-logo" aria-label="M06-7-9PRACTICA" data-md-component="logo">
+      
+  <img src="../assets/stucom.png" alt="logo">
+
+    </a>
+    M06-7-9PRACTICA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descripció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seguiment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguiment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    endpoints
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    endpoints
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints-rest-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Endpoints REST (HTTP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Endpoints REST (HTTP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Autenticació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-parelles-i-sales" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧑‍🤝‍🧑 Gestió de parelles i sales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missatgeria" class="md-nav__link">
+    <span class="md-ellipsis">
+      💬 Missatgeria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documents-collaboratius" class="md-nav__link">
+    <span class="md-ellipsis">
+      📎 Documents col·laboratius
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitxers" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Fitxers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canals-websocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Canals WebSocket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Canals WebSocket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canal-de-comunicacio-general-per-sala-socketio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canal de comunicació general per sala (socket.io)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints-rest-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Endpoints REST (HTTP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Endpoints REST (HTTP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Autenticació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-parelles-i-sales" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧑‍🤝‍🧑 Gestió de parelles i sales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missatgeria" class="md-nav__link">
+    <span class="md-ellipsis">
+      💬 Missatgeria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documents-collaboratius" class="md-nav__link">
+    <span class="md-ellipsis">
+      📎 Documents col·laboratius
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitxers" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Fitxers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canals-websocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Canals WebSocket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Canals WebSocket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canal-de-comunicacio-general-per-sala-socketio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canal de comunicació general per sala (socket.io)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>endpoints</h1>
+
+<h2 id="endpoints-rest-http">🌐 <strong>Endpoints REST (HTTP)</strong><a class="headerlink" href="#endpoints-rest-http" title="Permanent link">#</a></h2>
+<h3 id="autenticacio">🔐 Autenticació<a class="headerlink" href="#autenticacio" title="Permanent link">#</a></h3>
+<blockquote>
+<p><strong>Nota:</strong> Si no hi ha login real, només cal validar per email/usuari.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Mètode</th>
+<th>Ruta</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/usuarios</code></td>
+<td>Llista de tots els usuaris disponibles (per mostrar o assignar parelles)</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/login</code></td>
+<td>Validació d’un usuari per email/nom (mock login)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="gestio-de-parelles-i-sales">🧑‍🤝‍🧑 Gestió de parelles i sales<a class="headerlink" href="#gestio-de-parelles-i-sales" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mètode</th>
+<th>Ruta</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/pareja/:userId</code></td>
+<td>Retorna la parella de l’usuari (i sala associada)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/salas</code></td>
+<td>Retorna totes les sales</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/sala/:salaId</code></td>
+<td>Dades d’una sala concreta (nom, tipus, participants, document)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="missatgeria">💬 Missatgeria<a class="headerlink" href="#missatgeria" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mètode</th>
+<th>Ruta</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/sala/:salaId/mensajes</code></td>
+<td>Retorna l’historial de missatges d’una sala</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/sala/:salaId/mensajes</code></td>
+<td>Desa un nou missatge (per missatges no temps real, o exportació)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/sala/:salaId/exportar</code></td>
+<td>Exporta la conversa en <code>.txt</code> o <code>.json</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="documents-collaboratius">📎 Documents col·laboratius<a class="headerlink" href="#documents-collaboratius" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mètode</th>
+<th>Ruta</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/documento/:documentoId</code></td>
+<td>Carrega el contingut d’un document</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><code>/api/documento/:documentoId</code></td>
+<td>Desa el contingut del document (autosave o manual)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/documento/:documentoId/export</code></td>
+<td>Exporta el document col·laboratiu com <code>.txt</code> o <code>.pdf</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="fitxers">📁 Fitxers<a class="headerlink" href="#fitxers" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mètode</th>
+<th>Ruta</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/sala/:salaId/archivos</code></td>
+<td>Pujar fitxers (amb <code>multipart/form-data</code>)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/sala/:salaId/archivos</code></td>
+<td>Llistar fitxers de la sala</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/archivos/:archivoId</code></td>
+<td>Descarregar fitxer</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="canals-websocket">🔄 <strong>Canals WebSocket</strong><a class="headerlink" href="#canals-websocket" title="Permanent link">#</a></h2>
+<h3 id="canal-de-comunicacio-general-per-sala-socketio">Canal de comunicació general per sala (<code>socket.io</code>)<a class="headerlink" href="#canal-de-comunicacio-general-per-sala-socketio" title="Permanent link">#</a></h3>
+<p>Usuaris connectats en temps real poden:</p>
+<table>
+<thead>
+<tr>
+<th>Esdeveniment (<code>socket.emit / socket.on</code>)</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>join-room</code></td>
+<td>Unir-se a una sala específica</td>
+</tr>
+<tr>
+<td><code>leave-room</code></td>
+<td>Sortir de la sala</td>
+</tr>
+<tr>
+<td><code>new-message</code></td>
+<td>Enviar un missatge a la sala</td>
+</tr>
+<tr>
+<td><code>text-update</code></td>
+<td>Actualitzar el contingut del document col·laboratiu</td>
+</tr>
+<tr>
+<td><code>request-initial-text</code></td>
+<td>Petició del contingut inicial del document</td>
+</tr>
+<tr>
+<td><code>initial-text</code></td>
+<td>Resposta amb el contingut actual del document</td>
+</tr>
+<tr>
+<td><code>user-typing</code></td>
+<td>Opcional: indicació que un usuari està escrivint</td>
+</tr>
+<tr>
+<td><code>file-uploaded</code></td>
+<td>Notificació que s’ha pujat un fitxer nou</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

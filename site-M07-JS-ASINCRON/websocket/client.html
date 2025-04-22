@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><title>Xat amb Sales</title></head>
+<body>
+  <h2>Xat WebSocket</h2>
+  <label>Nom:</label><input id="nick"><br>
+  <label>Sala:</label><input id="sala"><br>
+  <label>Tipus:</label>
+  <select id="tipusUsuari">
+    <option value="usuari">Usuari</option>
+    <option value="moderador">Moderador</option>
+  </select><br>
+  <button onclick="connectar()">Connectar</button>
+
+  <div id="xat"></div>
+  <input id="missatge"><button onclick="enviar()">Enviar</button>
+  <br>
+  <label>Expulsar usuari (moderadors només):</label>
+  <input id="nickExpulsat"><button onclick="expulsar()">Expulsar</button>
+
+  <script>
+    let socket;
+
+    function connectar() {
+      socket = new WebSocket("ws://localhost:8089");
+      socket.onopen = () => {
+        const nick = document.getElementById('nick').value;
+        const sala = document.getElementById('sala').value;
+        const tipusUsuari = document.getElementById('tipusUsuari').value;
+
+        socket.send(JSON.stringify({
+          tipus: "inici",
+          nick,
+          sala,
+          tipusUsuari
+        }));
+      };
+
+      socket.onmessage = (evt) => {
+        const xat = document.getElementById('xat');
+        xat.innerHTML += `<p>${evt.data}</p>`;
+      };
+
+      socket.onclose = () => {
+        alert("Connexió tancada");
+      };
+    }
+
+    function enviar() {
+      const text = document.getElementById('missatge').value;
+      socket.send(JSON.stringify({ tipus: "missatge", text }));
+    }
+
+    function expulsar() {
+      const nickExpulsat = document.getElementById('nickExpulsat').value;
+      socket.send(JSON.stringify({ tipus: "expulsar", nickExpulsat }));
+    }
+  </script>
+</body>
+</html>
