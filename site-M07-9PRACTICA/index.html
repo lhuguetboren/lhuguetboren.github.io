@@ -114,6 +114,98 @@ ENDPOINT: VIEW_HIST
 <p>Desenvolupador/a: programa i implementa les funcionalitats.<br>
 Supervisor/a: revisa el codi, valida el funcionament i documenta els canvis.</p>
 <p>Els rols es canvien cada sessió o mòdul completat.</p>
+
+ <div class="container">
+    <h1 class="mb-4">📄 Document de seguiment per parelles</h1>
+
+    <p><strong>Nom del projecte:</strong> Comunicació Col·laborativa per a Centres de Formació</p>
+    <p><strong>Grup:</strong> Parella núm. _____</p>
+
+    <div class="mb-4">
+      <label><strong>Alumne 1:</strong></label>
+      <input type="text" class="form-control mb-2" placeholder="Nom complet" />
+      <label><strong>Alumne 2:</strong></label>
+      <input type="text" class="form-control" placeholder="Nom complet" />
+    </div>
+
+    <h3 class="mt-5">🔁 Rols per sessió</h3>
+    <table class="table table-bordered mt-3">
+      <thead class="table-light">
+        <tr>
+          <th>Sessió</th>
+          <th>Data</th>
+          <th>Alumne que desenvolupa</th>
+          <th>Alumne que supervisa</th>
+          <th>Breu descripció del que s'ha fet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>/</td><td></td><td></td><td></td></tr>
+        <tr><td>2</td><td>/</td><td></td><td></td><td></td></tr>
+        <tr><td>3</td><td>/</td><td></td><td></td><td></td></tr>
+        <tr><td>4</td><td>/</td><td></td><td></td><td></td></tr>
+        <tr><td>...</td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="mt-5">🧠 Dificultats trobades</h3>
+    <textarea class="form-control mb-4" rows="3"></textarea>
+
+    <h3 class="mt-4">💡 Propostes de millora o idees extra</h3>
+    <textarea class="form-control mb-4" rows="3"></textarea>
+
+    <h3 class="mt-4">✅ Avaluació del funcionament de la parella</h3>
+
+    <div class="mb-3">
+      <p><strong>Comunicació i coordinació:</strong></p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="com1" />
+        <label class="form-check-label" for="com1">Molt bé</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="com2" />
+        <label class="form-check-label" for="com2">Bé</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="com3" />
+        <label class="form-check-label" for="com3">Regular</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="com4" />
+        <label class="form-check-label" for="com4">Malament</label>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Repartiment del treball:</strong></p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="rep1" />
+        <label class="form-check-label" for="rep1">Equitatiu</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="rep2" />
+        <label class="form-check-label" for="rep2">Una persona fa més que l’altra</label>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Compliment de terminis:</strong></p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="term1" />
+        <label class="form-check-label" for="term1">Sí</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="term2" />
+        <label class="form-check-label" for="term2">No</label>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label><strong>Altres observacions:</strong></label>
+      <textarea class="form-control" rows="2"></textarea>
+    </div>
+  </div>
+            
 <h1 id="entregables">Entregables </h1>
 <p>Codi font (frontend i backend)<br>
 Documentació tècnica (estructura de carpetes, API, WebSocket, codi comentat)<br>
