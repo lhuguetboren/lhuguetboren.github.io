@@ -1,0 +1,1058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/stucom.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>PYTHON + MONGODB - M0376-PYTHON</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-mongodb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="M0376-PYTHON" class="md-header__button md-logo" aria-label="M0376-PYTHON" data-md-component="logo">
+      
+  <img src="../../assets/stucom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M0376-PYTHON
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PYTHON + MONGODB
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="M0376-PYTHON" class="md-nav__button md-logo" aria-label="M0376-PYTHON" data-md-component="logo">
+      
+  <img src="../../assets/stucom.png" alt="logo">
+
+    </a>
+    M0376-PYTHON
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MONGO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MONGO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenido.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TEORIA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practicamongo.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PRACTICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MONGO-IOT
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MONGO-IOT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TEORIA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PRACTICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-datos-en-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base de Datos en MongoDB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de Datos en MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-claves-de-una-base-de-datos-en-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características Claves de una Base de Datos en MongoDB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-una-base-de-datos-en-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de una Base de Datos en MongoDB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo de una Base de Datos en MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-con-bases-de-datos-relacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparación con Bases de Datos Relacionales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion-de-la-funcionalidad-de-la-aplicacion-mongodb-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción de la Funcionalidad de la Aplicación MongoDB CRUD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descripción de la Funcionalidad de la Aplicación MongoDB CRUD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creacion-de-bases-de-datos-y-colecciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Creación de Bases de Datos y Colecciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-insercion-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Inserción de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-consulta-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Consulta de Usuarios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-actualizacion-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Actualización de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-eliminacion-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Eliminación de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-fusion-de-colecciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Fusión de Colecciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-menu-de-navegacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Menú de Navegación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esquema-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Esquema de uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glosario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glosario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Glosario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#glosario-de-conceptos-en-la-aplicacion-mongodb-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glosario de Conceptos en la Aplicación MongoDB CRUD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Glosario de Conceptos en la Aplicación MongoDB CRUD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      B
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      C
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      E
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    <span class="md-ellipsis">
+      F
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      I
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    <span class="md-ellipsis">
+      L
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      M
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      S
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      U
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-mongodb">PYTHON + MONGODB<a class="headerlink" href="#python-mongodb" title="Permanent link">#</a></h1>
+<h2 id="base-de-datos-en-mongodb"><strong>Base de Datos en MongoDB</strong><a class="headerlink" href="#base-de-datos-en-mongodb" title="Permanent link">#</a></h2>
+<p>Una <strong>base de datos en MongoDB</strong> es un contenedor que almacena <strong>colecciones de documentos JSON</strong>. A diferencia de las bases de datos relacionales tradicionales (SQL), MongoDB es <strong>NoSQL</strong>, lo que significa que no usa tablas, filas ni relaciones estrictas entre entidades. En su lugar, los datos se organizan en estructuras más flexibles denominadas <strong>documentos</strong> dentro de <strong>colecciones</strong>.</p>
+<h3 id="caracteristicas-claves-de-una-base-de-datos-en-mongodb"><strong>Características Claves de una Base de Datos en MongoDB</strong><a class="headerlink" href="#caracteristicas-claves-de-una-base-de-datos-en-mongodb" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>Almacenamiento de Documentos JSON/BSON</strong>  </li>
+<li>Cada registro en MongoDB se almacena en un <strong>documento JSON</strong> (internamente convertido a BSON para optimización).</li>
+<li>
+<p>Un documento puede contener diferentes campos y estructuras, sin necesidad de un esquema fijo.</p>
+</li>
+<li>
+<p><strong>No usa Esquema Fijo</strong>  </p>
+</li>
+<li>En bases de datos relacionales (SQL), cada tabla tiene columnas con tipos de datos definidos.  </li>
+<li>
+<p>En MongoDB, <strong>cada documento dentro de una colección puede tener diferentes campos</strong>, lo que brinda mayor flexibilidad.</p>
+</li>
+<li>
+<p><strong>Escalabilidad Horizontal</strong>  </p>
+</li>
+<li>
+<p>MongoDB permite <strong>distribuir datos en varios servidores</strong> mediante un sistema de <strong>sharding</strong>, lo que mejora la escalabilidad.</p>
+</li>
+<li>
+<p><strong>Consultas Rápidas</strong>  </p>
+</li>
+<li>
+<p>Utiliza <strong>índices</strong> y un potente motor de búsqueda para realizar consultas eficientes sin la necesidad de hacer uniones (joins).</p>
+</li>
+<li>
+<p><strong>Colecciones en lugar de Tablas</strong>  </p>
+</li>
+<li>En lugar de tablas, MongoDB usa <strong>colecciones</strong>, donde se almacenan múltiples documentos.</li>
+<li>
+<p>Las colecciones pueden almacenar documentos con estructuras variables.</p>
+</li>
+<li>
+<p><strong>Base de Datos Distribuida</strong>  </p>
+</li>
+<li>MongoDB puede trabajar en un entorno distribuido, permitiendo <strong>replicación de datos</strong> y alta disponibilidad.</li>
+</ol>
+<h3 id="ejemplo-de-una-base-de-datos-en-mongodb"><strong>Ejemplo de una Base de Datos en MongoDB</strong><a class="headerlink" href="#ejemplo-de-una-base-de-datos-en-mongodb" title="Permanent link">#</a></h3>
+<p>Supongamos que tenemos una base de datos llamada <strong><code>empresaDB</code></strong> con dos colecciones:</p>
+<ol>
+<li><strong>Colección <code>empleados</code></strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">Objec</span><span class="kc">t</span><span class="err">Id(</span><span class="s2">&quot;507f1f77bcf86cd799439011&quot;</span><span class="err">)</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Juan Pérez&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cargo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Desarrollador&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;edad&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;salario&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Colección <code>proyectos</code></strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">Objec</span><span class="kc">t</span><span class="err">Id(</span><span class="s2">&quot;507f191e810c19729de860ea&quot;</span><span class="err">)</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sistema de Ventas&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;responsable&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Juan Pérez&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;presupuesto&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Como puedes ver:</p>
+<ul>
+<li>Cada <strong>documento</strong> es un objeto JSON con campos personalizados.</li>
+<li>No es necesario que todos los documentos tengan los mismos campos.</li>
+<li>Los documentos pueden referenciarse entre sí (por ejemplo, <code>responsable</code> en <code>proyectos</code> puede coincidir con un <code>nombre</code> en <code>empleados</code>).</li>
+</ul>
+<h4 id="comparacion-con-bases-de-datos-relacionales"><strong>Comparación con Bases de Datos Relacionales</strong><a class="headerlink" href="#comparacion-con-bases-de-datos-relacionales" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>MongoDB (NoSQL)</th>
+<th>Bases Relacionales (SQL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estructura</td>
+<td>Documentos JSON/BSON</td>
+<td>Tablas con filas/columnas</td>
+</tr>
+<tr>
+<td>Esquema</td>
+<td>Flexible, sin esquema fijo</td>
+<td>Estricto, con esquema definido</td>
+</tr>
+<tr>
+<td>Escalabilidad</td>
+<td>Horizontal (sharding)</td>
+<td>Vertical (más potencia al servidor)</td>
+</tr>
+<tr>
+<td>Relación entre datos</td>
+<td>Referencias y embebidos</td>
+<td>Claves foráneas y joins</td>
+</tr>
+<tr>
+<td>Rendimiento</td>
+<td>Optimizado para lectura/escritura rápida</td>
+<td>Más lento en grandes volúmenes con joins</td>
+</tr>
+</tbody>
+</table>
+<p>En resumen, <strong>MongoDB es ideal para aplicaciones modernas</strong> que requieren <strong>escalabilidad, flexibilidad y rendimiento en grandes volúmenes de datos</strong>.</p>
+<p>Si necesitas más información o ejemplos, dime. 🚀</p>
+<h2 id="descripcion-de-la-funcionalidad-de-la-aplicacion-mongodb-crud"><strong>Descripción de la Funcionalidad de la Aplicación MongoDB CRUD</strong><a class="headerlink" href="#descripcion-de-la-funcionalidad-de-la-aplicacion-mongodb-crud" title="Permanent link">#</a></h2>
+<p>Esta aplicación implementa un <strong>CRUD</strong> (Crear, Leer, Actualizar y Eliminar) sobre una base de datos MongoDB, permitiendo la gestión de usuarios y empleados. A continuación, se detallan sus principales funciones:</p>
+<h3 id="1-creacion-de-bases-de-datos-y-colecciones"><strong>1. Creación de Bases de Datos y Colecciones</strong><a class="headerlink" href="#1-creacion-de-bases-de-datos-y-colecciones" title="Permanent link">#</a></h3>
+<ul>
+<li>Se generan dos bases de datos:</li>
+<li><code>crud_database</code>: Contiene la colección <code>users</code> para almacenar información de usuarios.</li>
+<li><code>employees_database</code>: Contiene la colección <code>employees</code> para almacenar información de empleados.</li>
+<li>Cada base de datos inicia con un registro por defecto para evitar que estén vacías.</li>
+</ul>
+<h3 id="2-insercion-de-datos"><strong>2. Inserción de Datos</strong><a class="headerlink" href="#2-insercion-de-datos" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Insertar Usuario:</strong> Permite añadir un único usuario especificando su nombre, edad y ciudad.</li>
+<li><strong>Insertar Múltiples Usuarios:</strong> Opción para agregar varios usuarios a la base de datos en una sola operación.</li>
+</ul>
+<h3 id="3-consulta-de-usuarios"><strong>3. Consulta de Usuarios</strong><a class="headerlink" href="#3-consulta-de-usuarios" title="Permanent link">#</a></h3>
+<ul>
+<li>Recupera y muestra todos los usuarios almacenados en la base de datos.</li>
+</ul>
+<h3 id="4-actualizacion-de-datos"><strong>4. Actualización de Datos</strong><a class="headerlink" href="#4-actualizacion-de-datos" title="Permanent link">#</a></h3>
+<ul>
+<li>Permite modificar la información de un usuario existente, específicamente su edad.</li>
+</ul>
+<h3 id="5-eliminacion-de-datos"><strong>5. Eliminación de Datos</strong><a class="headerlink" href="#5-eliminacion-de-datos" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Eliminar Usuario:</strong> Borra un usuario específico de la base de datos basándose en su nombre.</li>
+</ul>
+<h3 id="6-fusion-de-colecciones"><strong>6. Fusión de Colecciones</strong><a class="headerlink" href="#6-fusion-de-colecciones" title="Permanent link">#</a></h3>
+<ul>
+<li>Se combinan las colecciones <code>users</code> (de <code>crud_database</code>) y <code>employees</code> (de <code>employees_database</code>) en una nueva base de datos denominada <code>merged_database</code>, dentro de la colección <code>merged_data</code>.</li>
+</ul>
+<h3 id="7-menu-de-navegacion"><strong>7. Menú de Navegación</strong><a class="headerlink" href="#7-menu-de-navegacion" title="Permanent link">#</a></h3>
+<ul>
+<li>La aplicación proporciona una interfaz de menú en línea de comandos, permitiendo al usuario seleccionar las diferentes funcionalidades de manera interactiva.</li>
+</ul>
+<p>Esta estructura facilita la gestión de usuarios y empleados en MongoDB de forma sencilla y eficiente. 🚀</p>
+<h2 id="esquema-de-uso">Esquema de uso<a class="headerlink" href="#esquema-de-uso" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>graph LR;
+    subgraph Funcionalidades
+        A[Crear DB y Colecciones]
+        B[Insertar Usuario]
+        C[Insertar Múltiples Usuarios]
+        D[Buscar Usuarios]
+        E[Actualizar Usuario]
+        F[Eliminar Usuario]
+        G[Fusionar Colecciones]
+    end
+
+    subgraph Bases de Datos
+        DB1[crud_database]
+        DB2[employees_database]
+        DB3[merged_database]
+    end
+
+    A --&gt;|Crea| DB1 &amp; DB2
+    B --&gt;|Inserta en| DB1
+    C --&gt;|Inserta varios en| DB1
+    D --&gt;|Consulta en| DB1
+    E --&gt;|Actualiza en| DB1
+    F --&gt;|Elimina en| DB1
+    G --&gt;|Fusiona DB1 y DB2 en| DB3
+</code></pre>
+<h2 id="glosario">Glosario<a class="headerlink" href="#glosario" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="#a">A</a></li>
+<li><a href="#actualizar-usuario">Actualizar Usuario</a></li>
+<li>
+<p><a href="#aplicación-crud">Aplicación CRUD</a></p>
+</li>
+<li>
+<p><a href="#b">B</a></p>
+</li>
+<li>
+<p><a href="#base-de-datos">Base de Datos</a></p>
+</li>
+<li>
+<p><a href="#c">C</a></p>
+</li>
+<li><a href="#colección">Colección</a></li>
+<li>
+<p><a href="#crear-base-de-datos-y-colecciones">Crear Base de Datos y Colecciones</a></p>
+</li>
+<li>
+<p><a href="#d">D</a></p>
+</li>
+<li><a href="#documento">Documento</a></li>
+<li><a href="#db1-crud_database">DB1 (<code>crud_database</code>)</a></li>
+<li><a href="#db2-employees_database">DB2 (<code>employees_database</code>)</a></li>
+<li>
+<p><a href="#db3-merged_database">DB3 (<code>merged_database</code>)</a></p>
+</li>
+<li>
+<p><a href="#e">E</a></p>
+</li>
+<li><a href="#eliminar-usuario">Eliminar Usuario</a></li>
+<li>
+<p><a href="#empleado">Empleado</a></p>
+</li>
+<li>
+<p><a href="#f">F</a></p>
+</li>
+<li>
+<p><a href="#fusión-de-colecciones">Fusión de Colecciones</a></p>
+</li>
+<li>
+<p><a href="#i">I</a></p>
+</li>
+<li><a href="#insertar-usuario">Insertar Usuario</a></li>
+<li>
+<p><a href="#insertar-múltiples-usuarios">Insertar Múltiples Usuarios</a></p>
+</li>
+<li>
+<p><a href="#l">L</a></p>
+</li>
+<li>
+<p><a href="#leer-usuarios">Leer Usuarios</a></p>
+</li>
+<li>
+<p><a href="#m">M</a></p>
+</li>
+<li><a href="#mongodb">MongoDB</a></li>
+<li>
+<p><a href="#menú-de-navegación">Menú de Navegación</a></p>
+</li>
+<li>
+<p><a href="#q">Q</a></p>
+</li>
+<li>
+<p><a href="#query">Query</a></p>
+</li>
+<li>
+<p><a href="#s">S</a></p>
+</li>
+<li>
+<p><a href="#salir">Salir</a></p>
+</li>
+<li>
+<p><a href="#u">U</a></p>
+</li>
+<li><a href="#usuario">Usuario</a></li>
+</ul>
+<h3 id="glosario-de-conceptos-en-la-aplicacion-mongodb-crud"><strong>Glosario de Conceptos en la Aplicación MongoDB CRUD</strong><a class="headerlink" href="#glosario-de-conceptos-en-la-aplicacion-mongodb-crud" title="Permanent link">#</a></h3>
+<h4 id="a"><strong>A</strong><a class="headerlink" href="#a" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Actualizar Usuario</strong>: Modificar los datos de un usuario en la base de datos, generalmente la edad.</li>
+<li><strong>Aplicación CRUD</strong>: Sistema que permite realizar las operaciones básicas de una base de datos: Crear, Leer, Actualizar y Eliminar.</li>
+</ul>
+<h4 id="b"><strong>B</strong><a class="headerlink" href="#b" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Base de Datos</strong>: Contenedor estructurado donde se almacenan datos organizados en colecciones.</li>
+</ul>
+<h4 id="c"><strong>C</strong><a class="headerlink" href="#c" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Colección</strong>: Equivalente a una tabla en bases de datos relacionales, almacena documentos dentro de una base de datos en MongoDB.</li>
+<li><strong>Crear Base de Datos y Colecciones</strong>: Acción de generar nuevas bases de datos (<code>crud_database</code> y <code>employees_database</code>) con sus respectivas colecciones (<code>users</code> y <code>employees</code>).</li>
+</ul>
+<h4 id="d"><strong>D</strong><a class="headerlink" href="#d" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Documento</strong>: Unidad básica de almacenamiento en MongoDB, equivalente a una fila en bases de datos relacionales, representado en formato JSON.</li>
+<li><strong>DB1 (<code>crud_database</code>)</strong>: Base de datos principal que almacena información de usuarios.</li>
+<li><strong>DB2 (<code>employees_database</code>)</strong>: Base de datos secundaria que almacena información de empleados.</li>
+<li><strong>DB3 (<code>merged_database</code>)</strong>: Base de datos que almacena la fusión de <code>crud_database</code> y <code>employees_database</code>.</li>
+</ul>
+<h4 id="e"><strong>E</strong><a class="headerlink" href="#e" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Eliminar Usuario</strong>: Acción de borrar un usuario específico de la base de datos basándose en su nombre.</li>
+<li><strong>Empleado</strong>: Persona almacenada en la colección <code>employees</code>, generalmente con datos como nombre, cargo y salario.</li>
+</ul>
+<h4 id="f"><strong>F</strong><a class="headerlink" href="#f" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Fusión de Colecciones</strong>: Proceso de combinar los datos de <code>users</code> y <code>employees</code> en una nueva colección <code>merged_data</code> dentro de <code>merged_database</code>.</li>
+</ul>
+<h4 id="i"><strong>I</strong><a class="headerlink" href="#i" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Insertar Usuario</strong>: Acción de agregar un nuevo usuario en la colección <code>users</code>.</li>
+<li><strong>Insertar Múltiples Usuarios</strong>: Proceso que permite agregar varios usuarios en una sola operación a la base de datos.</li>
+</ul>
+<h4 id="l"><strong>L</strong><a class="headerlink" href="#l" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Leer Usuarios</strong>: Recuperar y mostrar todos los documentos almacenados en la colección <code>users</code>.</li>
+</ul>
+<h4 id="m"><strong>M</strong><a class="headerlink" href="#m" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>MongoDB</strong>: Base de datos NoSQL que almacena datos en documentos JSON en lugar de tablas relacionales.</li>
+<li><strong>Menú de Navegación</strong>: Interfaz interactiva en la terminal que permite a los usuarios seleccionar acciones dentro de la aplicación.</li>
+</ul>
+<h4 id="q"><strong>Q</strong><a class="headerlink" href="#q" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Query</strong>: Consulta utilizada para buscar datos dentro de una colección.</li>
+</ul>
+<h4 id="s"><strong>S</strong><a class="headerlink" href="#s" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Salir</strong>: Opción del menú que finaliza la ejecución de la aplicación.</li>
+</ul>
+<h4 id="u"><strong>U</strong><a class="headerlink" href="#u" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Usuario</strong>: Individuo almacenado en la colección <code>users</code>, con atributos como nombre, edad y ciudad.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
